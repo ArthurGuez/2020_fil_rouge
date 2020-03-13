@@ -1,29 +1,98 @@
 * {
-    margin: 2%;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: red;
+    background-color: black;
     color: #FFFFFF;
 }
 
 header {
+    position: fixed;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    margin: 2%;
+    padding: 2%;
+    border: 2px solid red;
+    width: 100%;
+}
+
+h1 {
+    font-family: Avenir, sans-serif;
+    border: 2px solid blue;
+}
+
+nav {
+    font-family: Avenir, sans-serif;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    border: 2px solid green;
 }
 
 nav ul {
+    font-family: Avenir, sans-serif;
     display: flex;
+    width: auto;
     flex-direction: row;
-    justify-content: space-evenly;
     list-style: none;
 }
 
-article {
-    margin
+li {
+    display: flex;
+    margin-right: 2vw;
+    align-items: center;
 }
 
-.box {
+a:link {
+    text-decoration: none;
+}
+
+#rs {
+    font-family: Avenir;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border: 2px solid blueviolet;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+    border: 2px solid yellow;
+    width: 100%;
+}
+
+footer p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+    border: 1px solid orange;
+    align-self: flex-end;
+
+}
+
+#ArrowBox {
+
+    padding: 30px 10px;
+    background-color: green;
+}
+
+#ArrowTop {
+    width: 30px;
+    height: 30px;
+    -webkit-transform: rotate(45deg);
+    border-left: 2px solid white;
+    border-top: 2px solid white;
+    border-right: none;
+    border-bottom: none;
+    opacity: 100%;
+    margin: 5px;
+    background-color: green;
+}
+
+footer h6 {
     width: 50%;
+    text-align: left;
+    font-size: 1.5em;
+    border: 1px solid orange;
+    align-self: flex-end;
 }
