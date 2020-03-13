@@ -1,0 +1,27 @@
+* {
+    margin: 2%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2%;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+article {
+    margin
+}
+
+.box {
+    width: 50%;
+}
