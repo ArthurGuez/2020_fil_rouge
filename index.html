@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheet.css">
     <title>Agence Contraste</title>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
 </head>
 <body>
 
@@ -22,11 +23,11 @@
     </header>
 
     <!-- LUCAS -->
-    <section>
-        <h2>Pas de superflu... <br />
-            Juste le contenu <br/>
-            Animations(s)... <br/>
-        </h2>
+    <section id="HomePage">
+            <h2>Pas de superflu... <br /> juste <span id="typed"></span></h2>
+            <a href="#agence" >
+                <div id="ArrowBottom"></div>
+            </a>
     </section>
 
     <!-- LÉO -->
@@ -57,6 +58,15 @@
         </form>
     </aside>
 
+    <script>
+        var typed = new Typed('#typed', {
+            strings: ["le contenu.", "l'essentiel.", "le style bro'."],
+            typeSpeed : 50,
+            backSpeed : 50,
+            loop: true,
+            showCursor: true
+        })
+    </script>
     <!-- SYLVIE -->
     <footer>
 
