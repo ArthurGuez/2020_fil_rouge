@@ -43,35 +43,31 @@
 header {
     position: fixed;
     display: flex;
-    justify-content: space-between;
     padding: 2%;
     border: 2px solid red;
-    width: 100%;
+    width: 100vw;
 }
 
 h1 {
-    justify-content: flex-start;
     font-family: Avenir, sans-serif;
     border: 2px solid blue;
+    margin-right: 10px;
+    width: auto;
 }
 
 nav {
     font-family: Avenir, sans-serif;
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
     border: 2px solid green;
+    width: 100vw;
 }
 
 nav ul {
     font-family: Avenir, sans-serif;
     display: flex;
-    width: auto;
     flex-direction: row;
+    justify-content: flex-end;
     list-style: none;
-    padding:0;
-    margin:0;
-    position: relative;
+    width: auto;
 }
 
 nav ul:After {
@@ -83,22 +79,21 @@ nav ul:After {
 nav ul li {
     display: list-item;
     list-style: none;
-    float: left;
-    }
+    margin-right: 3vw;
+}
 
 nav ul li i {
      font-size: 1.5em;
      width: auto;
-     } 
+} 
 
 nav ul li a {
-    display:block;
-    padding: 15px 30px;  
+    display: block;
+    padding: 15px 2px;  
     color:#FFF;
     font-size: 1em;
     text-decoration: none;
     text-align: center;
-    background-color: pink;
 }
 
 /* The Dropdown Styles */
@@ -106,49 +101,25 @@ nav ul li a {
 /* Hide Dropdowns by Default */
 nav ul ul {
     display: none;
-    transition-delay: 0s;
     position: absolute;
-    top: 55px;
+    top: 60px;
 }
 /* Display Dropdowns on Hover */
 nav ul li:hover > ul {
     display: list-item;
-    /* display: block; */
 }
 /* First Tier Dropdown */
 nav ul ul li {
-    width: 200px;
+    width: auto;
     float: none;
     position: relative;
-    border-bottom: none;
-    display: flex;
-    margin-right: 2vw;
     align-self: flex-end;
-
-}
-
-nav ul ul li i {
-    margin-right: 10px;
 }
     
 nav ul ul li a {
-    padding: 10px 15px;
+    padding: 10px 10px;
     text-align: left;
 }
-
-
-li {
-    display: flex;
-    margin-right: 2vw;
-    align-items: center;
-}
-
-/*#rs {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}*/
-
 
 footer {
     font-family: Avenir, sans-serif;
@@ -156,14 +127,13 @@ footer {
     justify-content: space-between;
     padding: 2%;
     border: 2px solid yellow;
-    width: 100%;
+    width: 75vw;
 }
 
 footer p {
     font-size: 0.9em;
     border: 1px solid orange;
     align-self: flex-end;
-
 }
 
 #ArrowBox {
