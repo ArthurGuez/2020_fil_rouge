@@ -1,0 +1,339 @@
+*{
+    margin: 0;
+    padding: 0;
+    /*EST-CE QU'IL FAUDRAIT PAS AJOUTER CES RESETS AUSSI ?*/
+    -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Font Awesome 5 Brands';
+    font-style: normal;
+    font-weight: normal;
+    src: url("css/webfonts/fa-brands-400.eot");
+    src: url("css/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("css/webfonts/fa-brands-400.woff2") format("woff2"), url("css/webfonts/fa-brands-400.woff") format("woff"), url("css/webfonts/fa-brands-400.ttf") format("truetype"), url("css/webfonts/fa-brands-400.svg#fontawesome") format("svg");
+}
+  
+.fab {
+font-family: 'Font Awesome 5 Brands'; 
+}
+
+@font-face {
+font-family: 'Font Awesome 5 Free';
+font-style: normal;
+font-weight: 400;
+src: url("css/webfonts/fa-regular-400.eot");
+src: url("css/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("css/webfonts/fa-regular-400.woff2") format("woff2"), url("css/webfonts/fa-regular-400.woff") format("woff"), url("css/webfonts/fa-regular-400.ttf") format("truetype"), url("css/webfonts/fa-regular-400.svg#fontawesome") format("svg");
+}
+
+.far {
+font-family: 'Font Awesome 5 Free';
+font-weight: 400;
+}
+
+@font-face {
+font-family: 'Font Awesome 5 Free';
+font-style: normal;
+font-weight: 900;
+src: url("css/webfonts/fa-solid-900.eot");
+src: url("css/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("css/webfonts/fa-solid-900.woff2") format("woff2"), url("css/webfonts/fa-solid-900.woff") format("woff"), url("css/webfonts/fa-solid-900.ttf") format("truetype"), url("css/webfonts/fa-solid-900.svg#fontawesome") format("svg");
+}
+
+.fa, .fas {
+font-family: 'Font Awesome 5 Free';
+font-weight: 900;
+}
+
+body{
+    font-family: Roboto, sans-serif;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: white;
+    background-color: black; 
+}
+
+header {
+    position: fixed;
+    display: flex;
+    padding: 2%;
+    width: 100vw;
+    background-color: black; 
+}
+
+h1 {
+    font-family: Avenir, sans-serif;
+    margin-right: 10px;
+    width: auto;
+}
+
+nav {
+    font-family: Avenir, sans-serif;
+    width: 100vw;
+    /*height: 10vh;*/
+    /*z-index: 1;*/
+}
+
+nav ul {
+    font-family: Avenir, sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style: none;
+    width: auto;
+}
+
+nav ul:After {
+    content: "";
+    display: block;
+    clear: both;
+    } 
+
+nav ul li {
+    display: list-item;
+    list-style: none;
+    margin-right: 3vw;
+}
+
+nav ul li i {
+     font-size: 1.5em;
+     width: auto;
+} 
+
+nav ul li a {
+    display: block;
+    padding: 15px 2px;  
+    color:#FFF;
+    font-size: 1em;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Style Dropdown */
+/* =================== */
+/* Cacher Dropdown par Défaut */
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 60px;
+}
+/* Dropdown apparait en Hover */
+nav ul li:hover > ul {
+    display: list-item;
+}
+/* First Tier Dropdown */
+nav ul ul li {
+    width: auto;
+    float: none;
+    position: relative;
+    align-self: flex-end;
+}
+    
+nav ul ul li a {
+    padding: 10px 10px;
+    text-align: left;
+}
+
+#homepage{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+#togglebutton{
+    width: 5vw;
+    height: 30vh;
+    position: fixed;
+    background-color: purple; /* Mettre "auto" lorsque nous mettrons le texte*/
+    right: 0;
+    bottom: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#agence{
+    width: 65vw;
+    height: 85vh; /* Mettre "auto" lorsque nous mettrons le texte*/
+    background-color: red;
+    padding-top: 15vh;
+}
+#concept{
+    width: 65vw;
+    height: 85vh; /* Mettre "auto" lorsque nous mettrons le texte*/
+    background-color: rgb(181, 201, 0);
+    padding-top: 15vh;
+}
+
+aside{
+    width: 30vw;
+    height: 90vh;
+    background-color: green;
+    position: sticky;
+    top: 10vh;
+}
+
+#team{
+    width: 55vw;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 5%;
+    /* A mettre pour voir la zone "Team" */
+    /* background-color: pink; */
+}
+
+footer {
+    font-family: Avenir, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+    border: 2px solid yellow;
+    width: 65vw;
+    /*height: 10vh;*/
+}
+
+footer p {
+    font-size: 0.9em;
+    border: 1px solid orange;
+    align-self: flex-end;
+}
+
+#ArrowBox {
+    padding: 30px 10px;
+    background-color: green;
+}
+
+#ArrowTop {
+    width: 30px;
+    height: 30px;
+    -webkit-transform: rotate(45deg);
+    border-left: 2px solid white;
+    border-top: 2px solid white;
+    border-right: none;
+    border-bottom: none;
+    opacity: 100%;
+    margin: 5px;
+    background-color: green;
+}
+
+footer h6 {
+    width: 50%;
+    text-align: left;
+    font-size: 1.5em;
+    border: 1px solid orange;
+    align-self: flex-end;
+}
+
+
+/* Pour créer des box de même taille */
+.box{
+    width: 50%;
+    display: block;
+}
+
+.texte{
+    background-color: white; /* A supprimer lors de la mise en forme */
+    color: black;
+}
+
+img{
+    width: 100%;
+    display: block;
+}
+
+
+/* Pour définir le padding de la zone "description" */ 
+.texte p{
+    padding: 10%;;
+}
+
+
+/* Pour mettre en forme et positionner le texte d'accroche */
+h2{
+    font-size: 5em;    
+    margin-left: 5%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+/* Pour créer et positionner la flèche du "scroll down" */
+#ArrowBottom{
+    width: 40px;
+    height: 40px;
+    transform: rotate(45deg);
+    border-left: none;
+    border-top: none;
+    border-right: 2px #fff solid;
+    border-bottom: 2px #fff solid;
+    position: absolute; 
+    left: 50%;
+    bottom: 10%;
+}
+
+
+/* Pour changer un bouton Checkbox en toggle button */
+input[type="checkbox"]{
+    position: relative;
+    width: 20px;
+    height: 40px;
+    -webkit-appearance: none;
+    background: white;
+    outline: none;
+    border-radius: 20px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+input:checked[type="checkbox"]{
+    background: black;
+}
+
+input[type="checkbox"]:before{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    background: grey;
+    transform: scale(0.7);
+    transition: 0.5s;
+}
+
+input:checked[type="checkbox"]:before{
+    top:20px;
+}
+
+
+/* Pour changer la forme d'un bouton */
+button{
+    height: 15px;
+    width: 15px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Pour changer la couleur des boutons */
+#bluebutton{
+    background-color: blue;
+}
+
+#greenbutton{
+    background-color: #00FF0C;
+}
+
+#redbutton{
+    background-color: red;
+}
+
+#yellowbutton{
+    background-color: yellow;
+}
