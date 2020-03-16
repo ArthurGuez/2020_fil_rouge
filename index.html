@@ -1,76 +1,108 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheet.css">
-    <title>Agence Contraste</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+    <script>  
+        /* Fonction pour changer la couleur des éléments */
+        function changeColor(color) { 
+            /* Utiliser une class "color" pour modifier plusieurs éléments d'un coup */
+            document.getElementById('typed').style.backgroundColor= color; 
+        }
+
+        /* Pas bon mais c'est une piste pour le ToggleButton */
+        /* 
+        function changeBodyColor(bodycolor) { 
+            document.body.style.backgroundColor= bodycolor; 
+        }
+        */
+    </script>
 </head>
+
 <body>
+    <!-- SECTION "BARRE DE NAVIGATION" -->
+    <nav>
+    </nav>
 
-    <!-- SYLVIE -->
-    <header>
-        <h1>Contraste</h1>
-        <nav>
-            <ul>
-                <li><a href="#agence">Agence</a></li>
-                <li><a href="#concept">Concept</a></li>
-                <li><a href="#equipe">Equipe</a></li>
-            </ul>
-        </nav>
-        <div>Réseaux Sociaux</div>
-    </header>
-
-    <!-- LUCAS -->
-    <section id="HomePage">
-            <h2>Pas de superflu... <br /> juste <span id="typed"></span></h2>
-            <a href="#agence" >
-                <div id="ArrowBottom"></div>
-            </a>
+    <!-- SECTION "PAGE D'ACCUEIL" -->
+    <section id="homepage">
+        <h2>Pas de superflu... <br /> juste <span id="typed"></span></h2>
+        <a href="#agence" >
+            <div id="ArrowBottom"></div>
+        </a>
     </section>
 
-    <!-- LÉO -->
-    <article id="agence">
-        <h3>L'agence</h3>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae perspiciatis minima optio, delectus soluta corrupti molestias dicta unde excepturi. ctus soluta corrupti molestias. molestias dicta unde excepturi. ctus soluta corrupti molestias. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur elit.</p>
-    </article>
+    <!-- SECTION "TOGGLE BUTTON" -->
+    <section id="togglebutton">
+        <!-- Pas bon mais c'est une piste pour le Toggle Button -->
+        <input type="checkbox" onclick = "changeBodyColor('white');">
+        <!-- Boutons pour changer la couleur -->
+        <button id="bluebutton" onclick = "changeColor('blue');"></button>
+        <button id="greenbutton" onclick = "changeColor('#00FF0C');"></button> 
+        <button id="redbutton" onclick = "changeColor('red');"></button>
+        <button id="yellowbutton" onclick = "changeColor('yellow');"></button> 
+    </section>
 
-    <article id="concept">
-        <h3>Le concept</h3>
-        <p>Rien de plus simple, un fond noir, du texte blanc et une couleur que tu choisis, et nous nous occupons du reste ! Pas de superfu... Juste le contenu.</p>
-    </article>
+    <!-- SECTION "L'AGENCE" -->
+    <section id="agence">
+        <p>Agence</p>
+    </section>
 
-    <!-- ARTHURE -->
-    <article id="equipe">
-        <h3></h3>
-        <div class="box">
-            <img src="koala.jpg" alt="">
-        </div>
-        <div class="box">
-
-        </div>
-    </article>
-
+    <!-- SECTION FORMULAIRE -->
     <aside id="formulaire">
-        <form action="post">
-            <label for="fname">Prénom</label>
-        </form>
+        <p>Form</p>
     </aside>
 
-    <script>
-        var typed = new Typed('#typed', {
-            strings: ["le contenu.", "l'essentiel.", "le style bro'."],
-            typeSpeed : 50,
-            backSpeed : 50,
-            loop: true,
-            showCursor: true
-        })
-    </script>
-    <!-- SYLVIE -->
-    <footer>
+    <!-- SECTION "LE CONCEPT" -->
+    <section id="concept">
+        <p>Concept</p>
+    </section>
 
+    <!-- SECTION "L'ÉQUIPE" -->
+    <section id="team">
+        <div class="box">
+            <img src="carré.png" alt="">
+        </div>
+        <div class="box texte">
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+        </div>
+        <div class="box texte">
+            <p>Description</p>
+        </div>
+        <div class="box">
+            <img src="carré.png" alt="">
+        </div>
+        <div class="box">
+            <img src="carré.png" alt="">
+        </div>
+        <div class="box texte">
+            <p>Description</p>
+        </div>
+        <div class="box texte">
+            <p>Description</p>
+        </div>
+        <div class="box">
+            <img src="carré.png" alt="">
+        </div>
+    </section>
+
+    <!-- SECTION "FOOTER" -->
+    <footer>
+        <p>Footer</p>
     </footer>
 
+    <!-- ANIMATION DU TEXTE "D'ACCUEIL" -->
+    <script>
+    var typed = new Typed('#typed', {
+        strings: ["le contenu.", "l'essentiel.", "le style bro'."],
+        typeSpeed : 50,
+        backSpeed : 50,
+        loop: true,
+        showCursor: true
+    })
+    </script>
 </body>
 </html>
