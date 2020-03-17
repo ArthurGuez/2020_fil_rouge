@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
@@ -34,9 +33,9 @@
                 <li><a href="#equipe">Equipe</a></li>
                 <li><a href="#reseaux">Réseaux</a>
                     <ul>
-                        <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram-square"></i></a>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Linkedin</a></li>
+                        <li><a href="#">Github</a></li>
                     </ul>
                 </li>
             </ul>
@@ -53,8 +52,9 @@
 
     <!-- SECTION "TOGGLE BUTTON" -->
     <section id="togglebutton">
-        <!-- Pas bon mais c'est une piste pour le Toggle Button -->
-        <input type="checkbox" onclick = "changeBodyColor('white');">
+        <!-- Pas bon mais c'est une piste pour le Toggle Button
+        <input type="checkbox" onclick = "changeBodyColor('white');"-->
+        <input type="checkbox" id="switch" /><label for="switch"></label>
         <!-- Boutons pour changer la couleur -->
         <button id="bluebutton" onclick = "changeColor('blue');"></button>
         <button id="greenbutton" onclick = "changeColor('#00FF0C');"></button> 

@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     /*EST-CE QU'IL FAUDRAIT PAS AJOUTER CES RESETS AUSSI ?*/
@@ -7,45 +7,7 @@
             box-sizing: border-box;
 }
 
-@font-face {
-    font-family: 'Font Awesome 5 Brands';
-    font-style: normal;
-    font-weight: normal;
-    src: url("css/webfonts/fa-brands-400.eot");
-    src: url("css/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("css/webfonts/fa-brands-400.woff2") format("woff2"), url("css/webfonts/fa-brands-400.woff") format("woff"), url("css/webfonts/fa-brands-400.ttf") format("truetype"), url("css/webfonts/fa-brands-400.svg#fontawesome") format("svg");
-}
-  
-.fab {
-font-family: 'Font Awesome 5 Brands'; 
-}
-
-@font-face {
-font-family: 'Font Awesome 5 Free';
-font-style: normal;
-font-weight: 400;
-src: url("css/webfonts/fa-regular-400.eot");
-src: url("css/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("css/webfonts/fa-regular-400.woff2") format("woff2"), url("css/webfonts/fa-regular-400.woff") format("woff"), url("css/webfonts/fa-regular-400.ttf") format("truetype"), url("css/webfonts/fa-regular-400.svg#fontawesome") format("svg");
-}
-
-.far {
-font-family: 'Font Awesome 5 Free';
-font-weight: 400;
-}
-
-@font-face {
-font-family: 'Font Awesome 5 Free';
-font-style: normal;
-font-weight: 900;
-src: url("css/webfonts/fa-solid-900.eot");
-src: url("css/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("css/webfonts/fa-solid-900.woff2") format("woff2"), url("css/webfonts/fa-solid-900.woff") format("woff"), url("css/webfonts/fa-solid-900.ttf") format("truetype"), url("css/webfonts/fa-solid-900.svg#fontawesome") format("svg");
-}
-
-.fa, .fas {
-font-family: 'Font Awesome 5 Free';
-font-weight: 900;
-}
-
-body{
+body {
     font-family: Roboto, sans-serif;
     display: flex;
     flex-direction: row;
@@ -58,25 +20,23 @@ header {
     position: fixed;
     display: flex;
     padding: 2%;
-    width: 100vw;
+    width: 95vw;
     background-color: black; 
+    font-family: Avenir, sans-serif;
+    z-index: 1;
 }
 
 h1 {
-    font-family: Avenir, sans-serif;
-    margin-right: 10px;
     width: auto;
 }
 
 nav {
-    font-family: Avenir, sans-serif;
     width: 100vw;
-    /*height: 10vh;*/
-    /*z-index: 1;*/
+    height: 10vh;
+    
 }
 
 nav ul {
-    font-family: Avenir, sans-serif;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -88,12 +48,13 @@ nav ul:After {
     content: "";
     display: block;
     clear: both;
-    } 
+} 
 
 nav ul li {
     display: list-item;
     list-style: none;
-    margin-right: 3vw;
+    margin-right: 0vw;
+    margin-left: 3vw;
 }
 
 nav ul li i {
@@ -103,11 +64,11 @@ nav ul li i {
 
 nav ul li a {
     display: block;
-    padding: 15px 2px;  
+    padding: 15px 0px;  
     color:#FFF;
     font-size: 1em;
     text-decoration: none;
-    text-align: center;
+    text-align: left;
 }
 
 /* Style Dropdown */
@@ -116,23 +77,25 @@ nav ul li a {
 nav ul ul {
     display: none;
     position: absolute;
-    top: 60px;
+    top: 70px;
 }
 /* Dropdown apparait en Hover */
 nav ul li:hover > ul {
     display: list-item;
+    transition-delay: 2s;
 }
-/* First Tier Dropdown */
+/* Dropdown */
 nav ul ul li {
     width: auto;
     float: none;
     position: relative;
-    align-self: flex-end;
+    background-color: black;
+    padding: 0px 15px;
+    margin: 0px -15px;
 }
     
 nav ul ul li a {
-    padding: 10px 10px;
-    text-align: left;
+    padding: 10px 0px;
 }
 
 #homepage{
@@ -191,14 +154,12 @@ footer {
     display: flex;
     justify-content: space-between;
     padding: 2%;
-    border: 2px solid yellow;
     width: 65vw;
     /*height: 10vh;*/
 }
 
 footer p {
     font-size: 0.9em;
-    border: 1px solid orange;
     align-self: flex-end;
 }
 
@@ -224,7 +185,6 @@ footer h6 {
     width: 50%;
     text-align: left;
     font-size: 1.5em;
-    border: 1px solid orange;
     align-self: flex-end;
 }
 
