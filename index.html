@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,12 +54,13 @@
     <section id="togglebutton">
         <!-- Pas bon mais c'est une piste pour le Toggle Button
         <input type="checkbox" onclick = "changeBodyColor('white');"-->
-        <input type="checkbox" id="switch" /><label for="switch"></label>
+        <input type="checkbox" id="switch" name="theme"/>
+        <label for="switch">Toggle</label>
         <!-- Boutons pour changer la couleur -->
         <button id="bluebutton" onclick = "changeColor('blue');"></button>
         <button id="greenbutton" onclick = "changeColor('#00FF0C');"></button> 
         <button id="redbutton" onclick = "changeColor('red');"></button>
-        <button id="yellowbutton" onclick = "changeColor('yellow');"></button> 
+        <button id="yellowbutton" onclick = "changeColor('yellow');"></button>  
     </section>
 
     <!-- SECTION "L'AGENCE" -->
@@ -115,6 +116,10 @@
         </div>
         <h6>Ceci est un pied.</h6>
     </footer>
+
+
+    <!-- SWITCH MODE DARK & LIGHT -->
+    <script src="toggle.js"></script>
 
     <!-- ANIMATION DU TEXTE "D'ACCUEIL" -->
     <script>

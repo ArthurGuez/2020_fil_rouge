@@ -1,23 +1,18 @@
-/*const checkbox = document.getElementById('checkbox');
+var checkbox = document.querySelector('input[name=theme]');
 
-checkbox.addEventListener('change', () => {
-	document.body.classList.toggle('light');
-});*/
+        checkbox.addEventListener('change', function() {
+            if(this.checked) {
+                trans()
+                document.documentElement.setAttribute('data-theme', 'light');
+            } else {
+                trans()
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })
 
-/*function myFunction() {
-    var element = document.body;
-    element.classList.toggle("light-mode");
-  }*/
-
-  $('#mode').change(function(){   
-    
-    if ($(this).prop('checked'))
-    {
-        $('body').addClass('light-mode);
-    }
-    else
-    {
-        $('body').removeClass('light-mode');
-    }
-    
-});
+        let trans = () => {
+            document.documentElement.classList.add('transition');
+            window.setTimeout(() => {
+                document.documentElement.classList.remove('transition')
+            }, 1000)
+        }

@@ -1,4 +1,4 @@
-* {
+*{
     margin: 0;
     padding: 0;
     /*EST-CE QU'IL FAUDRAIT PAS AJOUTER CES RESETS AUSSI ?*/
@@ -7,13 +7,37 @@
             box-sizing: border-box;
 }
 
-body {
+html {
+    --bg: black;
+    --color-text: #FCFCFC;
+    --color-headings: #fcfcfc;
+    --link-color: #FCFCFC;
+    --color-footer: #FCFCFC;
+    --border-left-color: #FCFCFC;
+    --border-top-color: #FCFCFC;
+    --border-right-color: #FCFCFC;
+    --border-bottom-color: #FCFCFC;
+}
+
+html[data-theme='light'] {
+    --bg: #FCFCFC;
+    --color-text: black;
+    --color-headings: black;
+    --linkColor: black;
+    --color-footer: black;
+    --border-left-color: black;
+    --border-top-color: black;
+    --border-right-color: black;
+    --border-bottom-color: black;
+}
+
+body{
     font-family: Roboto, sans-serif;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    color: white;
-    background-color: black; 
+    background-color: var(--bg);
+    color: var(--color-text);
 }
 
 header {
@@ -21,8 +45,8 @@ header {
     display: flex;
     padding: 2%;
     width: 95vw;
-    background-color: black; 
     font-family: Avenir, sans-serif;
+    background-color: var(--bg);
     z-index: 1;
 }
 
@@ -65,10 +89,10 @@ nav ul li i {
 nav ul li a {
     display: block;
     padding: 15px 0px;  
-    color:#FFF;
     font-size: 1em;
     text-decoration: none;
     text-align: left;
+    color: var(--linkColor);
 }
 
 /* Style Dropdown */
@@ -89,13 +113,14 @@ nav ul ul li {
     width: auto;
     float: none;
     position: relative;
-    background-color: black;
+    background-color: var(--bg);
     padding: 0px 15px;
     margin: 0px -15px;
 }
     
 nav ul ul li a {
     padding: 10px 0px;
+    color: var(--linkColor);
 }
 
 #homepage{
@@ -172,8 +197,10 @@ footer p {
     width: 30px;
     height: 30px;
     -webkit-transform: rotate(45deg);
-    border-left: 2px solid white;
-    border-top: 2px solid white;
+    border-left: 2px solid;
+    color: var(--border-left-color);
+    border-top: 2px solid;
+    color: var(--border-top-color);
     border-right: none;
     border-bottom: none;
     opacity: 100%;
@@ -195,8 +222,8 @@ footer h6 {
     display: block;
 }
 
-.texte{
-    background-color: white; /* A supprimer lors de la mise en forme */
+.texte {
+    background-color: white; /* A supprimer lors de la mise en forme*/
     color: black;
 }
 
@@ -208,7 +235,7 @@ img{
 
 /* Pour définir le padding de la zone "description" */ 
 .texte p{
-    padding: 10%;;
+    padding: 10%;
 }
 
 
@@ -228,15 +255,17 @@ h2{
     transform: rotate(45deg);
     border-left: none;
     border-top: none;
-    border-right: 2px #fff solid;
-    border-bottom: 2px #fff solid;
+    border-right: 2px solid;
+    color: var(--border-right-color);
+    border-bottom: 2px solid;
+    color: var(--border-bottom-color);
     position: absolute; 
     left: 50%;
     bottom: 10%;
 }
 
 
-/* Pour changer un bouton Checkbox en toggle button */
+/* Pour changer un bouton Checkbox en toggle button
 input[type="checkbox"]{
     position: relative;
     width: 20px;
@@ -268,8 +297,52 @@ input[type="checkbox"]:before{
 
 input:checked[type="checkbox"]:before{
     top:20px;
+}*/
+
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
 }
 
+label {
+	cursor: pointer;
+    text-indent: -9999px;
+    top: 0;
+    left: 0;
+	width: 20px;
+    height: 40px;
+    background: #FCFCFC;
+	float: right;
+	border-radius: 100px;
+	position: relative;
+}
+
+label:after {
+	content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+	width: 20px;
+	height: 20px;
+	background: grey;
+	border-radius: 90px;
+    transition: 0.3s;
+    transform: scale(0.7);
+}
+
+input:checked + label {
+    background: var(--color-headings);
+}
+
+input:checked + label:after {
+	top: 20px;
+	transform: scale(0.7);
+}
+
+label:active:after {
+	width: 45px;
+}
 
 /* Pour changer la forme d'un bouton */
 button{
