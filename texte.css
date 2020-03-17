@@ -1,0 +1,43 @@
+body{
+    background-color: black;
+}
+
+
+
+form{
+    font-size: 16;
+    background: chocolate;
+    max-width: 40%;
+    margin: 0 auto;
+       
+}
+/* Questionaire  */
+
+input, textarea{
+    width: 30%;
+    padding: 10px;
+
+}
+/* Boutom envoyer */
+.envoyer input{
+    background-color: #069;
+    height: 30px;
+    width: 70px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid;
+    color:black;
+    cursor: pointer;
+   
+}
+
+.envoyer input p{
+    color: burlywood;
+
+}
+
+
+.envoyer input:hover{
+    background: yellow;
+}
+

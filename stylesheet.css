@@ -1,9 +1,9 @@
 * {
-    margin: 2%;
+     margin: 2%;
     padding: 0;
     box-sizing: border-box;
-    background-color: red;
-    color: #FFFFFF;
+    background-color:black;
+    color: #FFFFFF; 
 }
 
 header {
@@ -18,7 +18,7 @@ nav ul {
     flex-direction: row;
     justify-content: space-evenly;
     list-style: none;
-}
+} 
 
 article {
     margin
@@ -27,3 +27,98 @@ article {
 .box {
     width: 50%;
 }
+
+
+
+
+
+ /* LEONARDINHO */
+
+.section_agence{
+	width: 100%;
+	display: flex;
+	justify-content: space-between
+	
+	 };
+	 
+	
+
+  /* Paragraphe */ 
+  .discription-agence{
+	  width: 90%;
+  }
+#agence , #concept {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 20px;
+    color: #FFFFFF;
+    }
+
+ p{
+     padding-top: 10px;
+    }
+    
+ #concept{  
+        padding-top: 1%;
+    }
+
+ h3{
+        border-bottom: 6px solid #25FD02; 
+        width: 20%;
+        padding-bottom: 20px;
+    };
+
+	/* Formulaire contact */
+
+	
+
+	form{
+		font-size: 16;
+		background: chocolate;
+		width: 20px;
+		margin: 0 auto;
+	
+		
+	
+		   
+	}
+	/* Questionaire  */
+	
+	input, textarea{
+		width: 200px;
+		padding: 10px;
+		background: white;
+		color: black;
+	
+	}
+	/* Boutom envoyer */
+	.envoyer input{
+		background-color: white;
+		height: 30px;
+		width: 70px;
+		font-weight: bold;
+		border-radius: 5px;
+		border: 1px solid;
+		color:black;
+		cursor: pointer;
+	   
+	}
+	
+	.envoyer input:hover{
+		background: yellow;
+	}
+
+	
+	
+	
+
+	
+	
+
+
+
+
+  
+
