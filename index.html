@@ -10,7 +10,7 @@
         /* Fonction pour changer la couleur des éléments */
         function changeColor(color) { 
             /* Utiliser une class "color" pour modifier plusieurs éléments d'un coup */
-            document.getElementById('typed').style.backgroundColor= color; 
+            document.getElementById('typed').style.color= color; 
         }
 
         /* Pas bon mais c'est une piste pour le ToggleButton */
@@ -40,10 +40,10 @@
         <!-- Pas bon mais c'est une piste pour le Toggle Button -->
         <input type="checkbox" onclick = "changeBodyColor('white');">
         <!-- Boutons pour changer la couleur -->
-        <button id="bluebutton" onclick = "changeColor('blue');"></button>
-        <button id="greenbutton" onclick = "changeColor('#00FF0C');"></button> 
-        <button id="redbutton" onclick = "changeColor('red');"></button>
-        <button id="yellowbutton" onclick = "changeColor('yellow');"></button> 
+        <button class="boutoncouleur" id="bluebutton" onclick = "changeColor('#28FFFB');"></button>
+        <button class="boutoncouleur" id="greenbutton" onclick = "changeColor('#00FF0C');"></button> 
+        <button class="boutoncouleur" id="pinkbutton" onclick = "changeColor('#FB28FF');"></button>
+        <button class="boutoncouleur" id="yellowbutton" onclick = "changeColor('yellow');"></button> 
     </section>
 
     <!-- SECTION "L'AGENCE" -->
@@ -53,7 +53,25 @@
 
     <!-- SECTION FORMULAIRE -->
     <aside id="formulaire">
-        <p>Form</p>
+
+        <form action="">
+            <h3>Nous contacter ?</h3>
+
+            <input type="text" id="name" name="user_name" placeholder="Prénom" required>
+          
+            <input type="email" id="mail" name="user_email" placeholder="Email" required>
+   
+            <input type="text" id="subject" name="user_subject" placeholder="De quoi voulez parler ?" required>
+
+            <textarea id="msg" name="user_message" placeholder="Votre demande" required></textarea>
+           
+            <div class="button">
+              <button type="submit">Envoyer</button>
+            </div>
+
+            <div id="barre"></div>
+        </form>
+        
     </aside>
 
     <!-- SECTION "LE CONCEPT" -->
