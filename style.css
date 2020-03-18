@@ -409,19 +409,19 @@ button{
 
 footer{
     width: 65vw;
-    height: 10vh;
+    height: 15vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
 footer p{
-    font-size: 0.5em;
+    font-size: 0.75em;
 }
 
 footer h6 {
     width: 50%;
-    font-size: 0.75em;
+    font-size: 1em;
     text-align: center;
 }
 
@@ -465,4 +465,3 @@ footer h6 {
     justify-content: center;
 
 }
-
