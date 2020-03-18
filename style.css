@@ -10,14 +10,131 @@ body{
     flex-wrap: wrap;
     color: white;
     background-color: black; 
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
 }
 
-nav{
+/* Pour mettre en forme et positionner le texte d'accroche */
+header{
     width: 100vw;
     height: 10vh;
-    background-color: tomato; /* A supprimer lors de la mise en forme */
     position: fixed;
+    background-color: black; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     z-index: 1;
+}
+
+#logo{
+    width: 30vw;
+    padding-left: 5%;
+}
+
+h1 {
+    font-size: 2em;
+    width: auto;
+}
+
+nav {
+    width: 70vw; 
+    padding-right: 5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+nav ul {
+    list-style: none;
+    width: auto;
+    display: flex;
+}
+
+nav ul :hover{
+    color: #25FD02;
+}
+
+nav ul:After {
+    content: "";
+    display: block;
+    clear: both;
+} 
+
+nav ul li {
+    display: list-item;
+    list-style: none;
+    margin-right: 0vw;
+    margin-left: 3vw;
+}
+
+
+nav ul li a {
+    display: block;
+    padding: 15px 0px;  
+    color:#FFF;
+    font-size: 1em;
+    text-decoration: none;
+    text-align: left;
+}
+
+/* Style Dropdown */
+/* =================== */
+/* Cacher Dropdown par Défaut */
+nav ul ul {
+    display: none;
+    position: absolute;
+}
+
+/* Dropdown apparait en Hover */
+nav ul li:hover > ul {
+    display: list-item;
+}
+/* Dropdown */
+nav ul ul li {
+    width: auto;
+    float: none;
+    position: relative;
+    background-color: black;
+    padding: 0px 15px;
+    margin: 0px -15px;
+    font-size: 0.75em;
+}
+    
+nav ul ul li a {
+    padding: 10px 0px;
+}
+/* Fin Dropdown */
+
+
+h2{
+    font-size: 5em;    
+    margin-left: 5%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+h3{
+    font-size: 1.25em;
+    margin-top: 7.5%;
+}
+
+section h3{
+    font-size: 2em;
+    border-bottom: 15px solid #25FD02; 
+    width: 50%;
+    padding-bottom: 20px;
+    margin-bottom: 5%;
+}
+
+p{
+    font-size: 1em;
+    line-height: 2em;
+}
+
+a{
+    text-decoration: none;
+    color: white;
 }
 
 #homepage{
@@ -39,16 +156,22 @@ nav{
 }
 
 #agence{
-    width: 65vw;
-    height: 85vh; /* Mettre "auto" lorsque nous mettrons le texte*/
-    background-color: red;
-    padding-top: 15vh;
+    width: 55vw;
+    height: 85vh;
+    /* background-color: red; */
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 #concept{
-    width: 65vw;
-    height: 85vh; /* Mettre "auto" lorsque nous mettrons le texte*/
-    background-color: rgb(181, 201, 0);
-    padding-top: 15vh;
+    width: 55vw;
+    height: 85vh;
+    /* background-color: rgb(181, 201, 0); */
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #team{
@@ -58,16 +181,14 @@ nav{
     flex-direction: row;
     flex-wrap: wrap;
     padding: 5%;
+    padding-top: 10%;
     /* A mettre pour voir la zone "Team" */
     /* background-color: pink; */
 }
 
-footer{
-    width: 65vw;
-    height: 10vh;
-    background-color: pink; /* A supprimer lors de la mise en forme */
+#header-team{
+width: 100%;
 }
-
 
 /* Pour créer des box de même taille */
 .box{
@@ -76,8 +197,7 @@ footer{
 }
 
 .texte{
-    background-color: white; /* A supprimer lors de la mise en forme */
-    color: black;
+    color:white;
 }
 
 img{
@@ -85,21 +205,56 @@ img{
     display: block;
 }
 
+#team p{
+    font-size: 0.85em;
+    text-align: center;
+    font-style: italic;  
+}
+
+.texte_team{
+    height: 80%;
+    display: flex;
+    font-size: 1em;
+    flex-direction: column; /* direction d'affichage verticale */
+    justify-content: center; /* alignement vertical */
+}
+
+.box_header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 20%;
+}
+
+.linkedinbox{
+    width: 20%;
+    background-color: #25FD02;
+    display: flex; /* contexte sur le parent */
+    flex-direction: column; /* direction d'affichage verticale */
+    justify-content: center; /* alignement vertical */
+    font-size: 1.5em;
+}
+
+.membre{
+    width: 75%;
+    display: flex; /* contexte sur le parent */
+    flex-direction: column; /* direction d'affichage verticale */
+    justify-content: center; /* alignement vertical */
+    padding-left: 5%;
+}
+
+.membre-left{
+    padding-right: 5%;
+    padding-left: 0;
+    text-align: right;
+}
+
+
 
 /* Pour définir le padding de la zone "description" */ 
 .texte p{
     padding: 10%;;
 }
-
-
-/* Pour mettre en forme et positionner le texte d'accroche */
-h2{
-    font-size: 5em;    
-    margin-left: 5%;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
 
 /* Pour créer et positionner la flèche du "scroll down" */
 #ArrowBottom{
@@ -231,19 +386,83 @@ button{
     outline: none;
     border: none;
     cursor: pointer;
+    margin-bottom: 7.5%;
   }
 
-  /* Barre de décoration du formulaire */
-  #barre{
-      height: 90%;
-      width: 15%;
-      background-color: #00FF0C;
-      position: absolute;
-      float: right;
-      flex: none;
-      right: 10%;
-  }
+/* Barre de décoration du formulaire */
+#barre{
+    height: 90%;
+    width: 15%;
+    background-color: #00FF0C;
+    position: absolute;
+    float: right;
+    flex: none;
+    right: 10%;
+}
 
-  #typed{
-      color: #00FF0C;
-  }
+#typed{
+    color: #00FF0C;
+}
+
+
+
+
+footer{
+    width: 65vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+footer p{
+    font-size: 0.5em;
+}
+
+footer h6 {
+    width: 50%;
+    font-size: 0.75em;
+    text-align: center;
+}
+
+#texte_footer_left{
+    height: 100%;
+    width: 34%;
+    display: flex;
+    align-items: center;
+    padding-left: 8%;
+}
+
+#ArrowBox{
+    height: 100%;
+    width: 8%;
+    background-color: #25FD02;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ArrowTop {
+    width: 20px;
+    height: 20px;
+    -webkit-transform: rotate(45deg);
+    border-left: 2px solid;
+    color: var(--border-left-color);
+    border-top: 2px solid;
+    color: var(--border-top-color);
+    border-right: none;
+    border-bottom: none;
+    opacity: 100%;
+    margin: 5px;
+    background-color: #25FD02;
+}
+
+#texte_footer_right{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
