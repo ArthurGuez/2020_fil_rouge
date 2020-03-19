@@ -1,0 +1,581 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    --bg: black;
+    --reverse-bg: #fcfcfc;
+    --color-text: #FCFCFC;
+    --reverse-color-text: black;
+    --color-headings: #fcfcfc;
+    --link-color: #FCFCFC;
+    --color-footer: #FCFCFC;
+    --border-left-color: #FCFCFC;
+    --border-top-color: #FCFCFC;
+    --border-right-color: #FCFCFC;
+    --border-bottom-color: #FCFCFC;
+}
+
+html[data-theme='light'] {
+    --bg: #FCFCFC;
+    --reverse-bg: black;
+    --color-text: black;
+    --reverse-color-text: #FCFCFC;
+    --color-headings: black;
+    --linkColor: black;
+    --color-footer: black;
+    --border-left-color: black;
+    --border-top-color: black;
+    --border-right-color: black;
+    --border-bottom-color: black;
+}
+
+body{
+    font-family: Roboto, sans-serif;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: var(--bg);
+    color: var(--color-text);
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+}
+
+/* Pour mettre en forme et positionner le texte d'accroche */
+header{
+    width: 100vw;
+    height: 10vh;
+    position: fixed;
+    background-color: var(--bg);
+    color: var(--color-text);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 1;
+}
+
+
+#logo{
+    width: 30vw;
+    padding-left: 5%;
+}
+
+h1 {
+    font-size: 2em;
+    width: auto;
+}
+
+nav {
+    width: 70vw; 
+    padding-right: 5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 1;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    width: auto;
+    display: flex;
+}
+nav ul:After {
+    content: "";
+    display: block;
+    clear: both;
+} 
+
+nav ul li {
+    display: list-item;
+    list-style: none;
+    margin-right: 0vw;
+    margin-left: 3vw;
+}
+
+nav ul li :hover{
+    color: #25FD02;
+}
+
+
+nav ul li a {
+    display: block;
+    padding: 15px 0px;  
+    font-size: 1em;
+    text-decoration: none;
+    text-align: left;
+}
+
+/* Style Dropdown */
+/* =================== */
+/* Cacher Dropdown par Défaut */
+nav ul ul {
+    display: none;
+    position: absolute;
+}
+
+/* Dropdown apparait en Hover */
+nav ul li:hover > ul {
+    display: list-item;
+}
+/* Dropdown */
+nav ul ul li {
+    width: auto;
+    float: none;
+    position: relative;
+    background-color: var(--bg);
+    padding: 0px 15px;
+    margin: 0px -15px;
+    font-size: 0.75em;
+}
+    
+nav ul ul li a {
+    padding: 10px 0px;
+}
+    
+/* Fin Dropdown */
+
+
+h2{
+    font-size: 5em;    
+    margin-left: 5%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+h3{
+    font-size: 1.25em;
+    margin-top: 7.5%;
+}
+
+h4{
+    font-size: 1.30em;
+}
+
+h5{
+    font-size: 0.85em;
+    font-weight: lighter;
+}
+
+section h3{
+    font-size: 2em;
+    border-bottom: 15px solid #25FD02; 
+    width: 50%;
+    padding-bottom: 20px;
+    margin-bottom: 5%;
+}
+
+p{
+    font-size: 1em;
+    line-height: 2em;
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-text);}
+
+#homepage{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+#togglebutton{
+    width: 5vw;
+    height: 30vh;
+    position: fixed;
+    right: 0;
+    bottom: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#agence{
+    width: 55vw;
+    height: 85vh;
+    /* background-color: red; */
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#concept{
+    width: 55vw;
+    height: 85vh;
+    /* background-color: rgb(181, 201, 0); */
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#team{
+    width: 55vw;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 5%;
+    padding-top: 10%;
+    /* A mettre pour voir la zone "Team" */
+    /* background-color: pink; */
+}
+
+#header-team{
+width: 100%;
+}
+
+/* Pour créer des box de même taille */
+.box{
+    width: 50%;
+    display: block;
+}
+
+.texte{
+    background-color: var(--reverse-bg);
+    color: var(--reverse-color-text);
+}
+
+img{
+    width: 100%;
+    display: block;
+}
+
+#team p{
+    font-size: 0.85em;
+    text-align: center;
+    font-style: italic;  
+}
+
+.texte_team{
+    height: 80%;
+    display: flex;
+    flex-direction: column; /* direction d'affichage verticale */
+    justify-content: center; /* alignement vertical */
+}
+
+.box-reverse{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.box_header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 20%;
+    background-color: var(--bg);
+    color: var(--color-text);}
+
+.linkedinbox{
+    width: 20%;
+    background-color: #25FD02;
+    display: flex; /* contexte sur le parent */
+    flex-direction: column; /* direction d'affichage verticale */
+    justify-content: center; /* alignement vertical */
+    font-size: 1.5em;
+}
+
+.membre{
+    width: 75%;
+    display: flex; /* contexte sur le parent */
+    flex-direction: column; /* direction d'affichage verticale */
+    justify-content: center; /* alignement vertical */
+    padding-left: 5%;
+}
+
+.membre-left{
+    padding-right: 5%;
+    padding-left: 0;
+    text-align: right;
+}
+
+
+
+/* Pour définir le padding de la zone "description" */ 
+.texte p{
+    padding: 10%;;
+}
+
+/* Pour créer et positionner la flèche du "scroll down" */
+#ArrowBottom{
+    width: 30px;
+    height: 30px;
+    transform: rotate(45deg);
+    border-left: none;
+    border-top: none;
+    border-right: 1px var(--border-right-color) solid;
+    border-bottom: 1px var(--border-bottom-color) solid;
+    position: absolute; 
+    left: 50%;
+    bottom: 10%;
+}
+
+#ArrowBottom:hover{
+    border-right: 3px var(--border-right-color) solid;
+    border-bottom: 3px var(--border-bottom-color) solid;
+}
+
+
+/* Pour changer un bouton Checkbox en toggle button */
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+    visibility: hidden;
+}
+
+label {
+	cursor: pointer;
+    text-indent: -9999px;
+    top: 0;
+    left: 0;
+	width: 20px;
+    height: 40px;
+    background: #FCFCFC;
+	float: right;
+	border-radius: 100px;
+    position: relative;
+}
+
+label:after {
+	content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+	width: 20px;
+	height: 20px;
+	background: var(--bg);
+	border-radius: 90px;
+    transition: 0.3s;
+    transform: scale(0.7);
+}
+
+input:checked + label {
+    background: var(--color-headings);
+}
+
+input:checked + label:after {
+	top: 20px;
+	transform: scale(0.7);
+}
+
+label:active:after {
+    width: 45px;
+}
+
+
+
+/* Pour changer la forme d'un bouton */
+.boutoncouleur{
+    height: 15px;
+    width: 15px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: var(--reverse-bg);
+}
+
+/* Pour changer la couleur des boutons */
+#bluebutton:hover{
+    background-color: #28FFFB;
+}
+
+#greenbutton:hover{
+    background-color: #00FF0C;
+}
+
+#pinkbutton:hover{
+    background-color: #FB28FF;
+}
+
+#yellowbutton:hover{
+    background-color: #FFFB28;
+}
+
+
+/* STYLE DU FORMULAIRE */
+#formulaire{
+    width: 25vw;
+    height: 85vh;
+    position: sticky;
+    top: 10vh;
+    padding: 2.5%;
+    padding-bottom: 0;
+}
+
+form{
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;   
+}
+
+input{
+    width : 90%;
+    height: 7.5%;
+    margin: 0;
+    outline: none;
+    border: none;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box; 
+            box-sizing: border-box;
+    padding-left: 2%;
+    z-index: 2;
+    background-color: var(--reverse-bg);
+    color: var(--reverse-color-text);
+  }
+
+textarea{
+    width: 90%;
+    height: 20%;
+    -webkit-box-sizing: border-box; 
+       -moz-box-sizing: border-box; 
+            box-sizing: border-box;
+    margin: 0;
+    outline: none;
+    border: none;
+    resize: none;
+    padding-top: 5%;
+    padding-left: 2%;
+    z-index: 2;
+    background-color: var(--reverse-bg);
+    color: var(--reverse-color-text);
+  }
+
+button{
+    width : 50%;
+    height: 5vh;
+    margin: 0;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 7.5%;
+    background-color: var(--reverse-bg);
+    color: var(--reverse-color-text);
+  }
+
+textarea::placeholder, input::placeholder {
+    color: var(--reverse-color-text)
+}
+
+/* Barre de décoration du formulaire */
+#barre{
+    height: 90%;
+    width: 15%;
+    background-color: #00FF0C;
+    position: absolute;
+    float: right;
+    flex: none;
+    right: 10%;
+}
+
+/* Pour changer la couleur de l'effet "typed" */
+#typed{
+    color: #00FF0C;
+}
+
+
+
+
+footer{
+    width: 65vw;
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+footer p{
+    font-size: 0.75em;
+}
+
+footer h6 {
+    width: 50%;
+    font-size: 1em;
+    text-align: center;
+}
+
+#texte_footer_left{
+    height: 100%;
+    width: 34%;
+    display: flex;
+    align-items: center;
+    padding-left: 8%;
+}
+
+#ArrowBox{
+    height: 100%;
+    width: 8%;
+    background-color: #25FD02;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ArrowTop {
+    width: 20px;
+    height: 20px;
+    -webkit-transform: rotate(45deg);
+    border-left: 2px solid;
+    color: var(--border-left-color);
+    border-top: 2px solid;
+    color: var(--border-top-color);
+    border-right: none;
+    border-bottom: none;
+    opacity: 100%;
+    margin: 5px;
+    background-color: #25FD02;
+}
+
+#texte_footer_right{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+/**** PARTIE RESPONSIVE ****/
+
+/* SMARTPHONES */
+@media screen and (max-width: 768px){
+    #agence, #concept, #team, #formulaire{
+        width: 95vw;
+    }
+
+    .box{
+        width: 100%;
+    }
+
+    .texte{
+        height: 60vh;
+    }
+    
+    .texte_team{
+        height: 45vh;
+    }
+    
+    .box_header{
+        height: 15vh;
+    }
+
+    #team p{
+        font-size: 1.5em;
+    }
+
+    .box-reverse{
+        flex-direction: column-reverse;
+    }
+
+    #formulaire{
+        display: none;
+    }
+}

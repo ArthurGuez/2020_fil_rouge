@@ -1,76 +1,217 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheet.css">
-    <title>Agence Contraste</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Contrast Agency</title>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+    <script>  
+        /* Fonction pour changer la couleur des éléments */
+        function changeColor(color) { 
+            document.getElementById('typed').style.color= color; 
+        }
+    </script>
 </head>
-<body>
 
-    <!-- SYLVIE -->
+<body>
+    <!-- SECTION "BARRE DE NAVIGATION" -->
     <header>
-        <h1>Contraste</h1>
+        <section id="logo">
+            <h1><a href="#homepage">Contrast.</a></h1>
+        </section>
         <nav>
             <ul>
-                <li><a href="#agence">Agence</a></li>
-                <li><a href="#concept">Concept</a></li>
-                <li><a href="#equipe">Equipe</a></li>
+                <li><a href="#agence">L'agence</a></li>
+                <li><a href="#concept">Le concept</a></li>
+                <li><a href="#team">L'équipe</a></li>
+                <li><a href="#reseaux">Nos réseaux</a>
+                    <ul>
+                        <li><a href="https://www.facebook.com/"  target="_blank">Facebook</a></li>
+                        <li><a href="http://linkedin.com/"" target="_blank">Linkedin</a></li>
+                        <li><a href="https://github.com/"" target="_blank">Github</a></li>
+                    </ul>
+                </li>
             </ul>
-        </nav>
-        <div>Réseaux Sociaux</div>
+        </nav>       
     </header>
 
-    <!-- LUCAS -->
-    <section id="HomePage">
-            <h2>Pas de superflu... <br /> juste <span id="typed"></span></h2>
-            <a href="#agence" >
-                <div id="ArrowBottom"></div>
-            </a>
+    <!-- SECTION "PAGE D'ACCUEIL" -->
+    <section id="homepage">
+        <h2>Pas de superflu... <br /> juste <span id="typed"></span></h2>
+        <a href="#agence" >
+            <div id="ArrowBottom"></div>
+        </a>
     </section>
 
-    <!-- LÉO -->
-    <article id="agence">
+    <!-- SECTION "TOGGLE BUTTON" -->
+    <section id="togglebutton">
+
+        <!-- Toggle Button -->
+        <input type="checkbox" id="switch" name="theme"/>
+        <label for="switch"></label>
+
+        <!-- Boutons pour changer la couleur -->
+        <button class="boutoncouleur" id="greenbutton" onclick = "changeColor('#00FF0C');"></button> 
+        <button class="boutoncouleur" id="pinkbutton" onclick = "changeColor('#FB28FF');"></button>
+        <button class="boutoncouleur" id="yellowbutton" onclick = "changeColor('yellow');"></button> 
+        <button class="boutoncouleur" id="bluebutton" onclick = "changeColor('#28FFFB');"></button>
+    </section>
+
+    <!-- SECTION "L'AGENCE" -->
+    <section id="agence">
         <h3>L'agence</h3>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae perspiciatis minima optio, delectus soluta corrupti molestias dicta unde excepturi. ctus soluta corrupti molestias. molestias dicta unde excepturi. ctus soluta corrupti molestias. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur elit.</p>
-    </article>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ex sint fugit quos ipsam architecto alias provident numquam deleniti enim vel quidem natus totam voluptatibus sapiente dolorem sed quasi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ex sint fugit quos ipsam architect numquam deleniti enim vel quidem natus totam voluptatibus sapiente dolorem sed quasi. </p><br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ex sint fugit quos ipsam architecto alias provident numquam deleniti enim vel quidem natus totam voluptatibus sapiente dolorem sed quasi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ex sint fugit quos ipsam arcenim vel quidem natus totam voluptatibus sapiente dolorem sed quasi. </p>
+    </section>
 
-    <article id="concept">
-        <h3>Le concept</h3>
-        <p>Rien de plus simple, un fond noir, du texte blanc et une couleur que tu choisis, et nous nous occupons du reste ! Pas de superfu... Juste le contenu.</p>
-    </article>
-
-    <!-- ARTHURE -->
-    <article id="equipe">
-        <h3></h3>
-        <div class="box">
-            <img src="koala.jpg" alt="">
-        </div>
-        <div class="box">
-
-        </div>
-    </article>
-
+    <!-- SECTION FORMULAIRE -->
     <aside id="formulaire">
-        <form action="post">
-            <label for="fname">Prénom</label>
+
+        <form action="">
+            <h3>Nous contacter</h3>
+            <!-- rajouter <label for="name"></label> pour l'accessibilité-->
+            <input type="text" id="name" name="user_name" placeholder="Prénom" required>
+          
+            <input type="email" id="mail" name="user_email" placeholder="Email" required>
+   
+            <input type="text" id="subject" name="user_subject" placeholder="Sujet (ex: Création de site web)" required>
+
+            <textarea id="msg" name="user_message" placeholder="Votre demande" required></textarea>
+           
+            <div class="button">
+              <button type="submit">Envoyer</button>
+            </div>
+
+            <div id="barre"></div>
         </form>
+        
     </aside>
 
-    <script>
-        var typed = new Typed('#typed', {
-            strings: ["le contenu.", "l'essentiel.", "le style bro'."],
-            typeSpeed : 50,
-            backSpeed : 50,
-            loop: true,
-            showCursor: true
-        })
-    </script>
-    <!-- SYLVIE -->
-    <footer>
+    <!-- SECTION "LE CONCEPT" -->
+    <section id="concept">
+        <h3>Le concept</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ex sint fugit quos ipsam architecto alias provident numquam deleniti enim vel quidem natus totam voluptatibus sapiente dolorem sed quasi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ex sint fugit quos ipsam architect numquam deleniti enim vel quidem natus totam voluptatibus sapiente dolorem sed quasi. </p><br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ex sint fugit quos ipsam architecto alias provident numquam deleniti enim vel quidem natus totam voluptatibus sapiente dolorem sed quasi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ex sint fugit quos ipsam arcenim vel quidem natus totam voluptatibus sapiente dolorem sed quasi. </p>
+    </section>
 
+    <!-- SECTION "L'ÉQUIPE" -->
+    <section id="team">    
+        <div id="header-team">
+            <h3>L'équipe</h3>
+        </div>
+        
+        <!-- BOX SYLVIE -->
+        <div class="box">
+            <img src="sylvie.jpg" alt="">
+        </div>
+
+        <div class="box texte">
+            <div class="box_header">
+                <div class="linkedinbox">
+                    <p class="linkedin"><a href="https://www.linkedin.com/in/sylvie-lu/">in</a></p>
+                </div>
+                <div class="membre">
+                    <h4>Sylvie LU</h4>
+                    <h5>Développeuse Back-End</h5>
+                </div>
+            </div>
+            <div class="texte_team">
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+            </div>
+        </div>
+
+        <!-- BOX ARTHURE -->
+        <div class="box-reverse">
+            <div class="box texte">
+                <div class="box_header">
+                    <div class="membre membre-left">
+                        <h4>Arthur GUEZ</h4>
+                        <h5>Développeur Full-Stack</h5>
+                    </div>
+                    <div class="linkedinbox">
+                        <p class="linkedin"><a href="https://www.linkedin.com/in/arthurguez/">in</a></p>
+                    </div>
+                </div>
+                <div class="texte_team">
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+                </div>
+            </div>
+            <div class="box">
+                <img src="arthur.jpg" alt="">
+            </div>
+        </div>
+
+
+        <!-- BOX LUCAS -->
+        <div class="box">
+            <img src="lucas.jpg" alt="">
+        </div>
+
+        <div class="box texte">
+            <div class="box_header">
+                <div class="linkedinbox">
+                    <p class="linkedin"><a href="https://www.linkedin.com/in/beneston-lucas/">in</a></p>
+                </div>
+                <div class="membre">
+                    <h4>Lucas BENESTON</h4>
+                    <h5>Développeur Front-End</h5>
+                </div>
+            </div>
+            <div class="texte_team">
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+            </div>
+        </div>
+
+        <!-- BOX LEO -->
+        <div class="box-reverse">
+            <div class="box texte">
+                <div class="box_header">
+                    <div class="membre membre-left">
+                        <h4>Léonardo KABONGO</h4>
+                        <h5>Content Creator / Back-End</h5>
+                    </div>
+                    <div class="linkedinbox">
+                        <p class="linkedin"><a href="https://www.linkedin.com/in/leonardo-antonio-maundo-kabongo-0a9141182/">in</a></p>
+                    </div>
+                </div>
+                <div class="texte_team">
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+                </div>
+            </div>
+            <div class="box">
+                <img src="leo.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION "FOOTER" -->
+    <footer>
+        <div id="texte_footer_left">
+            <p>21 rue de la Vanne<br>92120 Montrouge<br>Tel: +33 (0)1 44 43 11 00</p>
+        </div>
+        <div id="ArrowBox">
+            <a href="#homepage">
+                <div id="ArrowTop"></div>
+            </a>
+        </div>
+        <div id="texte_footer_right">
+            <h6>Ceci est un pied. <br> © Contrast.</h6>
+        </div>
     </footer>
 
+    <!-- SWITCH MODE DARK & LIGHT -->
+    <script src="toggle.js"></script>
+
+    <!-- ANIMATION DU TEXTE "D'ACCUEIL" -->
+    <script>
+    var typed = new Typed('#typed', {
+        strings: ["le contenu.", "l'essentiel.", "le style bro'.", "git push"],
+        typeSpeed : 50,
+        backSpeed : 50,
+        loop: true,
+        showCursor: true
+    })
+    </script>
 </body>
 </html>
