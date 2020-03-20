@@ -3,22 +3,248 @@
     padding: 0;
 }
 
+html {
+    --bg: black;
+    --reverse-bg: #fcfcfc;
+    --color-text: #FCFCFC;
+    --reverse-color-text: black;
+    --color-headings: #fcfcfc;
+    --link-color: #FCFCFC;
+    --color-footer: #FCFCFC;
+    --border-left-color: #FCFCFC;
+    --border-top-color: #FCFCFC;
+    --border-right-color: #FCFCFC;
+    --border-bottom-color: #FCFCFC;
+}
+
+html[data-theme='light'] {
+    --bg: #FCFCFC;
+    --reverse-bg: black;
+    --color-text: black;
+    --reverse-color-text: #FCFCFC;
+    --color-headings: black;
+    --linkColor: black;
+    --color-footer: black;
+    --border-left-color: black;
+    --border-top-color: black;
+    --border-right-color: black;
+    --border-bottom-color: black;
+}
+
 body{
     font-family: Roboto, sans-serif;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    color: white;
-    background-color: black; 
+    background-color: var(--bg);
+    color: var(--color-text);
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
 }
 
-nav{
+/* Pour mettre en forme et positionner le texte d'accroche */
+header{
     width: 100vw;
     height: 10vh;
-    background-color: tomato; /* A supprimer lors de la mise en forme */
     position: fixed;
+    background-color: var(--bg);
+    color: var(--color-text);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     z-index: 1;
 }
+
+
+#logo{
+    width: 30vw;
+    padding-left: 5%;
+}
+
+h1 {
+    font-size: 2em;
+    width: auto;
+}
+
+nav {
+    width: 70vw; 
+    padding-right: 5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 1;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    width: auto;
+    display: flex;
+}
+nav ul:After {
+    content: "";
+    display: block;
+    clear: both;
+} 
+
+nav ul li {
+    display: list-item;
+    list-style: none;
+    margin-right: 0vw;
+    margin-left: 3vw;
+}
+
+nav ul li :hover{
+    color: #25FD02;
+}
+
+
+nav ul li a {
+    display: block;
+    padding: 15px 0px;  
+    font-size: 1em;
+    text-decoration: none;
+    text-align: left;
+}
+
+/* Style Dropdown */
+/* =================== */
+/* Cacher Dropdown par Défaut */
+nav ul ul {
+    display: none;
+    position: absolute;
+}
+
+/* Dropdown apparait en Hover */
+nav ul li:hover > ul {
+    display: list-item;
+}
+/* Dropdown */
+nav ul ul li {
+    width: auto;
+    float: none;
+    position: relative;
+    background-color: var(--bg);
+    padding: 0px 15px;
+    margin: 0px -15px;
+    font-size: 0.75em;
+}
+    
+nav ul ul li a {
+    padding: 10px 0px;
+}
+    
+/* Fin Dropdown */
+
+/* Burger Menu */
+
+body {
+    overflow-x: hidden;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #25FD02;
+    margin: 5px 20px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 30vh;
+        top: 10vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        background-color: black;
+    }
+    .nav-links li {
+        opacity: 0;
+        font-size: 32px;
+    }
+    .burger {
+        display: block;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.burgerShut .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burgerShut .line2 {
+    opacity: 0;
+}
+
+.burgerShut .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Fin Burger Menu */
+
+h2{
+    font-size: 5em;    
+    margin-left: 5%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+h3{
+    font-size: 1.25em;
+    margin-top: 7.5%;
+}
+
+h4{
+    font-size: 1.25em;
+}
+
+h5{
+    font-size: 0.75em;
+    font-weight: lighter;
+}
+
+section h3{
+    font-size: 2em;
+    border-bottom: 15px solid #25FD02; 
+    width: 50%;
+    padding-bottom: 20px;
+    margin-bottom: 5%;
+}
+
+p{
+    font-size: 1em;
+    line-height: 2em;
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-text);}
 
 #homepage{
     width: 100vw;
@@ -30,7 +256,6 @@ nav{
     width: 5vw;
     height: 30vh;
     position: fixed;
-    background-color: purple; /* Mettre "auto" lorsque nous mettrons le texte*/
     right: 0;
     bottom: 35vh;
     display: flex;
@@ -40,147 +265,118 @@ nav{
 }
 
 #agence{
-    width: 65vw;
-    height: 85vh; /* Mettre "auto" lorsque nous mettrons le texte*/
-    background-color: red;
-    padding-top: 15vh;
+    width: 55vw;
+    height: 85vh;
+    /* background-color: red; */
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 #concept{
-    width: 65vw;
-    height: 85vh; /* Mettre "auto" lorsque nous mettrons le texte*/
-    background-color: rgb(181, 201, 0);
-    padding-top: 15vh;
+    width: 55vw;
+    height: 85vh;
+    /* background-color: rgb(181, 201, 0); */
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-aside{
-    width: 30vw;
-    height: 90vh;
-    background-color: green;
-    position: sticky;
-    top: 10vh;
-}
-
-footer{
-    width: 65vw;
-    height: 10vh;
-    background-color: pink; /* A supprimer lors de la mise en forme */
-}
-
-
-/* SECTION "L'EQUIPE" */
-
-#team {
+#team{
     width: 55vw;
     height: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     padding: 5%;
+    padding-top: 10%;
     /* A mettre pour voir la zone "Team" */
     /* background-color: pink; */
 }
 
-.box_right {
-    width: 50%;
-    background-color: white;
+#header-team{
+width: 100%;
 }
 
-.box_left {
+/* Pour créer des box de même taille */
+.box{
     width: 50%;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: block;
 }
 
-.photo {
-    width: 50%;
+.texte{
+    background-color: var(--reverse-bg);
+    color: var(--reverse-color-text);
 }
 
-.photo img {
+img{
     width: 100%;
+    display: block;
 }
 
-.box_header {
-    display: flex;
-    flex-direction: row;
-}
-
-.box_header_bottom {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-}
-
-.linkedin {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: #25FD02;
-    width: 75px;
-    height: 75px;
-    font-family: 'Source Sans Pro', sans-serif;
+#team p{
+    font-size: 0.85em;
     text-align: center;
-    font-size: 25px;
+    font-style: italic;  
 }
 
-a {
-    text-decoration: none;
-    color: white;
+.texte_team{
+    height: 80%;
+    display: flex;
+    flex-direction: column; /* direction d'affichage verticale */
+    justify-content: center; /* alignement vertical */
 }
 
-.membre {
-    padding: 5%;
-    height: 70px;
-    color: black;
+
+
+.box_header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 20%;
+    background-color: var(--bg);
+    color: var(--color-text);}
+
+.linkedinbox{
+    width: 20%;
+    background-color: #25FD02;
+    display: flex; /* contexte sur le parent */
+    flex-direction: column; /* direction d'affichage verticale */
+    justify-content: center; /* alignement vertical */
+    font-size: 1.5em;
 }
 
-.membre_bottom {
-    height: 70px;
-    color: black;
+.membre{
+    width: 75%;
+    display: flex; /* contexte sur le parent */
+    flex-direction: column; /* direction d'affichage verticale */
+    justify-content: center; /* alignement vertical */
+    padding-left: 5%;
+}
+
+.membre-left{
     padding-right: 5%;
+    padding-left: 0;
     text-align: right;
 }
 
-.membre h4, .membre_bottom h4 {
-    font-size: 25px;
-}
 
-.membre h5, .membre_bottom h5 {
-    font-size: 20px;
-    padding-top: 10px;;
-}
-
-.skills {
-    color: black;
-    text-align: center;
-    padding: 10%;
-}
 
 /* Pour définir le padding de la zone "description" */ 
 .texte p{
-    padding: 10%;
+    padding: 10%;;
 }
-
-
-/* Pour mettre en forme et positionner le texte d'accroche */
-h2{
-    font-size: 5em;    
-    margin-left: 5%;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
 
 /* Pour créer et positionner la flèche du "scroll down" */
 #ArrowBottom{
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     transform: rotate(45deg);
     border-left: none;
     border-top: none;
-    border-right: 2px #fff solid;
-    border-bottom: 2px #fff solid;
+    border-right: 2px var(--border-right-color) solid;
+    border-bottom: 2px var(--border-bottom-color) solid;
     position: absolute; 
     left: 50%;
     bottom: 10%;
@@ -188,63 +384,230 @@ h2{
 
 
 /* Pour changer un bouton Checkbox en toggle button */
-input[type="checkbox"]{
-    position: relative;
-    width: 20px;
-    height: 40px;
-    -webkit-appearance: none;
-    background: white;
-    outline: none;
-    border-radius: 20px;
-    transition: 0.5s;
-    cursor: pointer;
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+    visibility: hidden;
 }
 
-input:checked[type="checkbox"]{
-    background: black;
-}
-
-input[type="checkbox"]:before{
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
+label {
+	cursor: pointer;
+    text-indent: -9999px;
     top: 0;
     left: 0;
-    background: grey;
-    transform: scale(0.7);
-    transition: 0.5s;
+	width: 20px;
+    height: 40px;
+    background: #FCFCFC;
+	float: right;
+	border-radius: 100px;
+    position: relative;
 }
 
-input:checked[type="checkbox"]:before{
-    top:20px;
+label:after {
+	content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+	width: 20px;
+	height: 20px;
+	background: var(--bg);
+	border-radius: 90px;
+    transition: 0.3s;
+    transform: scale(0.7);
 }
+
+input:checked + label {
+    background: var(--color-headings);
+}
+
+input:checked + label:after {
+	top: 20px;
+	transform: scale(0.7);
+}
+
+label:active:after {
+    width: 45px;
+}
+
 
 
 /* Pour changer la forme d'un bouton */
-button{
+.boutoncouleur{
     height: 15px;
     width: 15px;
     border-radius: 50px;
     border: none;
     cursor: pointer;
     outline: none;
+    background-color: var(--reverse-bg);
 }
 
 /* Pour changer la couleur des boutons */
-#bluebutton{
-    background-color: blue;
+#bluebutton:hover{
+    background-color: #28FFFB;
 }
 
-#greenbutton{
+#greenbutton:hover{
     background-color: #00FF0C;
 }
 
-#redbutton{
-    background-color: red;
+#pinkbutton:hover{
+    background-color: #FB28FF;
 }
 
-#yellowbutton{
-    background-color: yellow;
+#yellowbutton:hover{
+    background-color: #FFFB28;
+}
+
+
+/* STYLE DU FORMULAIRE */
+#formulaire{
+    width: 25vw;
+    height: 85vh;
+    position: sticky;
+    top: 10vh;
+    padding: 2.5%;
+    padding-bottom: 0;
+}
+
+form{
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;   
+}
+
+input{
+    width : 90%;
+    height: 7.5%;
+    margin: 0;
+    outline: none;
+    border: none;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box; 
+            box-sizing: border-box;
+    padding-left: 2%;
+    z-index: 2;
+    background-color: var(--reverse-bg);
+    color: var(--reverse-color-text);
+  }
+
+textarea{
+    width: 90%;
+    height: 20%;
+    -webkit-box-sizing: border-box; 
+       -moz-box-sizing: border-box; 
+            box-sizing: border-box;
+    margin: 0;
+    outline: none;
+    border: none;
+    resize: none;
+    padding-top: 5%;
+    padding-left: 2%;
+    z-index: 2;
+    background-color: var(--reverse-bg);
+    color: var(--reverse-color-text);
+  }
+
+button{
+    width : 50%;
+    height: 5vh;
+    margin: 0;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 7.5%;
+    background-color: var(--reverse-bg);
+    color: var(--reverse-color-text);
+  }
+
+textarea::placeholder, input::placeholder {
+    color: var(--reverse-color-text)
+}
+
+/* Barre de décoration du formulaire */
+#barre{
+    height: 90%;
+    width: 15%;
+    background-color: #00FF0C;
+    position: absolute;
+    float: right;
+    flex: none;
+    right: 10%;
+}
+
+#typed{
+    color: #00FF0C;
+}
+
+
+
+
+footer{
+    width: 65vw;
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+footer p{
+    font-size: 0.75em;
+}
+
+footer h6 {
+    width: 50%;
+    font-size: 1em;
+    text-align: center;
+}
+
+#texte_footer_left{
+    height: 100%;
+    width: 34%;
+    display: flex;
+    align-items: center;
+    padding-left: 8%;
+}
+
+#ArrowBox{
+    height: 100%;
+    width: 8%;
+    background-color: #25FD02;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ArrowTop {
+    width: 20px;
+    height: 20px;
+    -webkit-transform: rotate(45deg);
+    border-left: 2px solid;
+    color: var(--border-left-color);
+    border-top: 2px solid;
+    color: var(--border-top-color);
+    border-right: none;
+    border-bottom: none;
+    opacity: 100%;
+    margin: 5px;
+    background-color: #25FD02;
+}
+
+#texte_footer_right{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+@media screen and (max-width: 768px){
+    #agence, #concept, #team, #formulaire{
+        width: 95vw;
+    }
+
+    #formulaire{
+display: none;
+    }
 }
