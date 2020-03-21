@@ -156,11 +156,15 @@ body {
     transition: all 0.3s ease;
 }
 
+#responsive_rs {
+    display: none;
+}
+
 @media screen and (max-width: 768px) {
     .nav-links {
         position: absolute;
         right: 0px;
-        height: 30vh;
+        height: 65vh;
         top: 10vh;
         display: flex;
         flex-direction: column;
@@ -176,6 +180,15 @@ body {
     }
     .burger {
         display: block;
+    }
+    #responsive_rs {
+        display: block;
+    }
+    #responsive_rs a {
+        text-align: center;
+    }
+    nav ul ul li {
+        display: none;
     }
 }
 
