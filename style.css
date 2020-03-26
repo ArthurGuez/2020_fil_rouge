@@ -770,3 +770,87 @@ footer h6 {
         margin-bottom: 5%;
     }
 }
+
+@media print {
+    body {
+        background-color: white; 
+        color: black; 
+        display: block;
+    }
+
+    header {
+        position: relative; 
+        height: auto;
+    }
+
+    section {
+        padding-top: 0; 
+        padding: 0;
+    }
+
+    #agence, #concept, #team, #formulaire {
+        width: 100vw; 
+        height: auto; 
+        padding: 0;
+    }
+
+    #homepage, nav, footer, #formulaire, #togglebutton, .linkedinbox {
+        display: none;
+    }
+
+    #logo {
+        padding: 0; 
+        font-size: 1em;
+    }
+
+    section h3 {
+        border-bottom: 0px; 
+        padding: 0; 
+        font-size: 1.25em; 
+        padding-bottom: 0; 
+        margin: 1.5% 0 1.5% 0;
+    }
+
+    .box {
+        width: 15vw; 
+        display: flex; 
+        flex-direction: row; 
+        flex-wrap: wrap;
+    }
+
+    .box-reverse {
+        flex-direction: row-reverse;
+    }
+
+    .texte {
+        width: 85vw;
+    }
+
+    img {
+        height: 10vh;
+    }
+
+    .box_header {
+        height: auto; 
+        width: 85vw; 
+        background-color: white; 
+        color: black;
+    }
+    
+    .membre-left {
+        padding-right: 0%; 
+        padding-left: 5%; 
+        text-align: left;
+    }
+
+    p {
+        font-size: 0.75em; 
+        line-height: 1.5em;
+    }
+
+    .box p {
+        font-size: 0.75em; 
+        text-align: left; 
+        padding: 0 0 5% 5%;
+    }
+}
