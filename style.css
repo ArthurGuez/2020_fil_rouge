@@ -223,7 +223,6 @@ nav ul ul {
 nav ul li:hover > ul {
     display: list-item;
 }
-
 /* Dropdown */
 nav ul ul li {
     width: auto;
