@@ -11,7 +11,7 @@ var typed = new Typed('#typed', {
 
 // SCRIPT TOGGLE 
 const checkbox = document.querySelector('input[name=theme]');
-const currentTheme = localStorage.getItem('data-theme');
+const currentTheme = null;
 
 if (currentTheme) {
     document.documentElement.setAttribute('data-theme', currentTheme);
@@ -72,42 +72,48 @@ navSlide();
 // SCRIPT BOUTONS COULEURS
 
 const iChangeColors = () => {
-    
-    // Sélectionnent les boutons switch (un par couleur) et activent setColor au clic
-    document.querySelector('.toGreen').addEventListener('click', () => {
-        setColor('#00FF0C')
-    });
-    document.querySelector('.toPink').addEventListener('click', () => {
-        setColor('#FB28FF')
-    });
-    document.querySelector('.toYellow').addEventListener('click', () => {
-        setColor('#FFFB28')
-    });
-    document.querySelector('.toBlue').addEventListener('click', () => {
-        setColor('#28FFFB')
-    });
+    // Const qui sélectionne tout les bg-color
+    const everyBackgroundColor = document.querySelectorAll('.backgroundChange');
 
-    // Sélectionne et modifie la couleur de tous les background, textes et bordures
-    let setColor = (color) => {
-        document.querySelectorAll('.backgroundChange').forEach(function (elem) {
-            elem.style.backgroundColor = color;
+    const everyBorderColor = document.querySelectorAll('.borderChange');
+
+    const everyTextColor = document.querySelectorAll('.textChange');
+
+    const everyTextHoveredColor = document.querySelectorAll('.textHoveredChange');
+
+    // Const qui sélectionnent les boutons switch
+    const toGreen = document.querySelector('.toGreen');
+    const toPink = document.querySelector('.toPink');
+    const toYellow = document.querySelector('.toYellow');
+    const toBlue = document.querySelector('.toBlue');
+
+
+    let setColor = function(color) {
+        everyBackgroundColor.forEach(function (everyBackgroundColorElem) {
+            everyBackgroundColorElem.style.backgroundColor = color;
         });
-        document.querySelectorAll('.borderChange').forEach(function (elem) {
-            elem.style.borderColor = color;
+        everyBorderColor.forEach(function (everyBorderColorElem) {
+            everyBorderColorElem.style.borderColor = color;
         });
-        document.querySelectorAll('.textChange').forEach(function (elem) {
-            elem.style.color = color;
+        everyTextColor.forEach(function (everyTextColorElem) {
+            everyTextColorElem.style.color = color;
         });
-        document.querySelectorAll('.textHoveredChange').forEach(function (elem) {
+
+        document.querySelectorAll(".textHoveredChange").forEach(function(elem) {
             elem.addEventListener('mouseover', function() {
                 this.style.color = color;
             });
+
             elem.addEventListener('mouseout', function() {
-                this.style.color = '';
+                this.style.color = 'white';
             });
-        })
-        
+        }, this);
     };
+
+    toGreen.addEventListener('click', function() { setColor('green') });
+    toPink.addEventListener('click', function() { setColor('pink') });
+    toYellow.addEventListener('click', function() { setColor('yellow') });
+    toBlue.addEventListener('click', function() { setColor('blue') });
 };
 
 iChangeColors();
