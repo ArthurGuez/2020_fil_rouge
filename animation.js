@@ -80,7 +80,7 @@ const iChangeColors = () => {
         setColor('#FB28FF')
     });
     document.querySelector('.toYellow').addEventListener('click', () => {
-        setColor('#FFFB28')
+        setColor('#fac51c')
     });
     document.querySelector('.toBlue').addEventListener('click', () => {
         setColor('#28FFFB')
@@ -105,7 +105,6 @@ const iChangeColors = () => {
                 this.style.color = '';
             });
         })
-        
     };
 };
 
