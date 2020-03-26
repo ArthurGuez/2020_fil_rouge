@@ -104,6 +104,10 @@ h1 {
     font-size: 2em;
 }
 
+h1 span {
+    color: #25FD02;
+}
+
 /* Pour mettre en forme et positionner le texte d'accroche */
 h2{
     font-size: 5em;    
