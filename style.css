@@ -742,7 +742,7 @@ footer h6 {
     }
 
     /* RENDRE INVISIBLE DES ÉLÉMENTS */
-    .boutoncouleur, #barre{
+    .boutoncouleur, .barre{
         display: none;
     }
 
