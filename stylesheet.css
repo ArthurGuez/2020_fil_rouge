@@ -2,8 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: red;
+    background-color: #000000;
     color: #FFFFFF;
+    font-family: Roboto, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 header {
@@ -20,8 +27,16 @@ nav ul {
     list-style: none;
 }
 
-article {
-    margin
+
+/* Arthur */
+
+.superbox {
+    width: 55vw;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 5%;
 }
 
 .box {

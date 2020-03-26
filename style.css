@@ -1,0 +1,773 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*** PARTIE SWITCH DU THÈME + VARIABLES DES COULEURS ***/
+html {
+    --color-black-white: black;
+    --color-white-black: #FCFCFC;
+}
+
+html[data-theme='light'] {
+    --color-black-white: #FCFCFC;
+    --color-white-black: black;
+}
+/*** FIN PARTIE SWITCH DU THÈME + VARIABLES DES COULEURS ***/
+
+/*** PERMET DE DÉFINIR DES CARACTÉRISTIQUES GÉNÉRALES POUR LE BODY ***/
+body{
+    font-family: Roboto, sans-serif;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: var(--color-black-white);
+    color: var(--color-white-black);
+    box-sizing: border-box; 
+    overflow-x: hidden;
+}
+/*** FIN BODY ***/
+
+
+
+/*** MISE EN FORME DU ZONING DES DIFFÉRENTES PARTIES ***/
+header{
+    width: 100vw;
+    height: 10vh;
+    position: fixed;
+    background-color: var(--color-black-white);
+    color: var(--color-white-black);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 1;
+}
+
+#homepage{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+#togglebutton{
+    width: 5vw;
+    height: 30vh;
+    position: fixed;
+    right: 0;
+    bottom: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#agence{
+    width: 55vw;
+    height: 85vh;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#concept{
+    width: 55vw;
+    height: 85vh;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#team{
+    width: 55vw;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 5%;
+    padding-top: 10%;
+}
+
+footer{
+    width: 65vw;
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+/*** FIN MISE EN FORME DU ZONING DES DIFFÉRENTES PARTIES ***/
+
+
+
+/*** MISE EN FORME DES DIFFÉRENTS TEXTES ***/
+h1 {
+    font-size: 2em;
+}
+
+h1 span {
+    color: #25FD02;
+}
+
+/* Pour mettre en forme et positionner le texte d'accroche */
+h2{
+    font-size: 5em;    
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* Pour changer la couleur de l'effet "typed" dans le <h2> */
+#typed{
+    color: #00FF0C;
+}
+
+h3{
+    font-size: 1.25em;
+    margin-top: 7.5%;
+}
+
+h4{
+    font-size: 1.20em;
+}
+
+h5{
+    font-size: 0.85em;
+    font-weight: lighter;
+}
+
+section h3{
+    font-size: 2em;
+    border-bottom: 15px solid #25FD02; 
+    width: 50%;
+    padding-bottom: 20px;
+    margin-bottom: 5%;
+}
+
+p{
+    font-size: 1em;
+    line-height: 2em;
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-white-black);
+}
+/*** FIN MISE EN FORME DES DIFFÉRENTS TEXTES ***/
+
+
+
+/*** PARTIE MENU ***/ 
+/* Pour placer la zone logo à gauche du header */
+#logo{
+    width: 30vw;
+    padding-left: 5%;
+}
+
+/* Pour place la zone "nav" à droite du header */
+nav {
+    width: 70vw; 
+    padding-right: 5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 1;
+    font-weight: bold;
+}
+
+/* Permet de rendre invisible le lien "Nous contacter" sur ordinateur, a afficher sur smartphone */
+#add-formulaire{
+    display: none;
+}
+
+nav ul {
+    list-style: none;
+    width: auto;
+    display: flex;
+}
+nav ul:After {
+    content: "";
+    display: block;
+    clear: both;
+} 
+
+nav ul li {
+    display: list-item;
+    list-style: none;
+    margin-right: 0vw;
+    margin-left: 3vw;
+}
+
+nav ul li :hover{
+    color: #25FD02;
+}
+
+
+nav ul li a {
+    display: block;
+    padding: 15px 0px;  
+    font-size: 1em;
+    text-decoration: none;
+    text-align: left;
+}
+
+/* Style Dropdown */
+/* Cacher Dropdown par Défaut */
+nav ul ul {
+    display: none;
+    position: absolute;
+}
+
+/* Dropdown apparait en Hover */
+nav ul li:hover > ul {
+    display: list-item;
+}
+
+/* Dropdown */
+nav ul ul li {
+    width: auto;
+    float: none;
+    position: relative;
+    background-color: var(--color-black-white);
+    padding: 0px 15px;
+    margin: 0px -15px;
+    font-size: 0.75em;
+}
+    
+nav ul ul li a {
+    padding: 10px 0px;
+}
+/* Fin Dropdown */
+/*** FIN PARTIE MENU ***/
+
+
+
+/*** PARTIE BURGER MENU ***/
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #25FD02;
+    margin: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+@media only screen 
+  and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: auto;
+        top: 10vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        background-color: var(--color-black-white);
+        border-bottom: 10px solid #25FD02;
+        padding-bottom: 5%;
+    }
+    .nav-links li {
+        opacity: 0;
+    }
+    .burger {
+        display: block;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.burgerShut .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burgerShut .line2 {
+    opacity: 0;
+}
+
+.burgerShut .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+/*** FIN PARTIE BURGER ***/
+
+
+
+/*** PARTIE FLÈCHE QUI PERMET UN SCROLL DOWN ***/
+/* Pour créer et positionner la flèche du "scroll down" */
+#ArrowBottom{
+    width: 30px;
+    height: 30px;
+    transform: rotate(45deg);
+    border-left: none;
+    border-top: none;
+    border-right: 1px var(--color-white-black) solid;
+    border-bottom: 1px var(--color-white-black) solid;
+    position: absolute; 
+    left: 48vw;
+    bottom: 10vh;
+}
+
+/* Effet hover de la flèche */
+#ArrowBottom:hover{
+    border-right: 3px var(--color-white-black) solid;
+    border-bottom: 3px var(--color-white-black) solid;
+}
+/*** FIN PARTIE FLÈCHE QUI PERMET UN SCROLL DOWN ***/
+
+
+
+/*** PARTIE "L'ÉQUIPE" ***/
+/* Pour créer des box de même taille */
+.box{
+    width: 50%;
+    display: block;
+}
+
+.texte{
+    background-color: var(--color-white-black);
+    color: var(--color-black-white);
+}
+
+img{
+    width: 100%;
+    display: block;
+}
+
+#header-team{
+    width: 100%;
+}
+
+/* Mise en forme de la box citation dans l'équipe */
+.texte_team{
+    height: 80%;
+    display: flex;
+    flex-direction: column; /* direction d'affichage verticale */
+    justify-content: center; /* alignement vertical */
+}
+
+/* Mise en forme du texte citation dans l'équipe */
+.texte_team p{
+    font-size: 0.85em;
+    text-align: center;
+    font-style: italic;  
+}
+
+/* Permet d'inverser les box "texte" et "photo" sur smartphone */
+.box-reverse{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* Partie qui englobe .membre (nom, prénom et fonction) et .linkedinbox */
+.box_header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 20%;
+    background-color: var(--color-black-white);
+    color: var(--color-white-black);}
+
+/* Mise en forme de la box Linkedin */
+.linkedinbox{
+    width: 20%;
+    background-color: #25FD02;
+    display: flex; /* contexte sur le parent */
+    flex-direction: column; /* direction d'affichage verticale */
+    justify-content: center; /* alignement vertical */
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/* Mise en forme du nom / prénom à droite */
+.membre{
+    width: 75%;
+    display: flex; /* contexte sur le parent */
+    flex-direction: column; /* direction d'affichage verticale */
+    justify-content: center; /* alignement vertical */
+    padding-left: 5%;
+}
+
+/* Mise en forme du nom / prénom à gauche*/
+.membre-left{
+    padding-right: 5%;
+    padding-left: 0;
+    text-align: right;
+}
+
+/* Pour définir le padding de la zone "description" */ 
+.texte p{
+    padding: 10%;;
+}
+/*** FIN PARTIE L'ÉQUIPE ***/
+
+
+
+/* Pour changer un bouton Checkbox en toggle button */
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+    visibility: hidden;
+}
+
+/* label[for="switch"] permet de cibler précisement le label du switch grâce à son "for=" */
+label[for="switch"]{
+	cursor: pointer;
+    text-indent: -9999px;
+    top: 0;
+    left: 0;
+	width: 20px;
+    height: 40px;
+    background: #FCFCFC;
+	float: right;
+	border-radius: 100px;
+    position: relative;
+}
+
+label[for="switch"]:after {
+	content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+	width: 20px;
+	height: 20px;
+	background: var(--color-black-white);
+	border-radius: 90px;
+    transition: 0.3s;
+    transform: scale(0.7);
+}
+
+input:checked + label[for="switch"] {
+    background: var(--color-white-black);
+}
+
+input:checked + label[for="switch"]:after {
+	top: 20px;
+	transform: scale(0.7);
+}
+
+label[for="switch"]:active:after {
+    width: 45px;
+}
+
+
+/*** PARTIE BOUTONS DE COULEURS ***/
+/* Pour changer la forme d'un bouton */
+.boutoncouleur{
+    height: 15px;
+    width: 15px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: var(--color-white-black);
+}
+
+/* Pour changer la couleur des boutons */
+#bluebutton:hover{
+    background-color: #28FFFB;
+}
+
+#greenbutton:hover{
+    background-color: #00FF0C;
+}
+
+#pinkbutton:hover{
+    background-color: #FB28FF;
+}
+
+#yellowbutton:hover{
+    background-color: #FFFB28;
+}
+/*** FIN PARTIE BOUTONS DE COULEURS ***/
+
+
+
+/*** PARTIE FORMULAIRE ***/
+#formulaire{
+    width: 25vw;
+    height: 85vh;
+    position: sticky;
+    top: 10vh;
+    padding: 2.5%;
+    padding-bottom: 0;
+}
+
+form{
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;   
+}
+
+input{
+    width : 90%;
+    height: 7.5%;
+    margin: 0;
+    outline: none;
+    border: none;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box; 
+            box-sizing: border-box;
+    padding-left: 2%;
+    z-index: 2;
+    background-color: var(--color-white-black);
+    color: var(--color-black-white);
+  }
+
+textarea{
+    width: 90%;
+    height: 20%;
+    -webkit-box-sizing: border-box; 
+       -moz-box-sizing: border-box; 
+            box-sizing: border-box;
+    margin: 0;
+    outline: none;
+    border: none;
+    resize: none;
+    padding-top: 5%;
+    padding-left: 2%;
+    z-index: 2;
+    background-color: var(--color-white-black);
+    color: var(--color-black-white);
+  }
+
+button{
+    width : 50%;
+    height: 5vh;
+    margin: 0;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 7.5%;
+    background-color: var(--color-white-black);
+    color: var(--color-black-white);
+  }
+
+textarea::placeholder, input::placeholder {
+    color: var(--color-black-white)
+}
+
+/* Barre de décoration du formulaire */
+.barre{
+    height: 90%;
+    width: 15%;
+    background-color: #00FF0C;
+    position: absolute;
+    float: right;
+    flex: none;
+    right: 10%;
+}
+/*** FIN PARTIE FORMULAIRE ***/
+
+
+/*** PARTIE FOOTER ***/
+/* Créer une box à gauche */
+#texte_footer_left{
+    height: 100%;
+    width: 34%;
+    display: flex;
+    align-items: center;
+    padding-left: 8%;
+}
+
+/* Définir le style du texte de la box de gauche */
+footer p{
+    font-size: 0.75em;
+}
+
+/* Créer une box pour la flèche "scroll top" */
+.ArrowBox{
+    height: 100%;
+    width: 8%;
+    background-color: #25FD02;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Créer une flèche "scroll top" */
+.ArrowTop {
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    border-left: 2px solid;
+    color: var(--color-white-black);
+    border-top: 2px solid;
+    color: var(--color-white-black);
+    border-right: none;
+    border-bottom: none;
+    opacity: 100%;
+    margin: 5px;
+    background-color: #25FD02;
+}
+
+/* Créer une box à droite */
+#texte_footer_right{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Définir le style du texte de la box de droite */
+footer h6 {
+    font-size: 1em;
+    text-align: center;
+}
+/*** FIN PARTIE FOOTER ***/
+
+
+
+/**** PARTIE RESPONSIVE ****/
+/* SMARTPHONES */
+@media screen  
+  and (max-width: 768px) {
+    #agence, #concept, #team, #formulaire {
+        width: 100vw;
+        height: auto;
+        order:1;
+    }
+
+    header{
+        z-index: 2;
+    }
+
+    footer{
+        width: 100vw;
+        order: 3;
+        margin-top: 10vh;
+    }
+
+    #texte_footer_left{
+        width: 37.5%;
+        padding-left: 5%;
+    }
+
+    #ArrowBox{
+        height: 100%;
+        width: 15%;
+    }
+
+    #texte_footer_right{
+        width: 42.5%;
+    }
+
+    h2{
+        font-size: 3em;
+    }
+
+    section h3{
+        width: 100%;
+        margin-top: 10vh;
+    }
+
+    /* SECTION "L'ÉQUIPE" */
+    .box{
+        width: 100%;
+    }
+
+    .texte{
+        height: 60vh;
+    }
+
+    .texte_team{
+        height: 45vh;
+    }
+
+    .box_header{
+        height: 15vh;
+    }
+    
+    .box-reverse{
+        flex-direction: column-reverse;
+    } 
+
+    /* TOGGLE BUTTON */
+    #togglebutton{
+        width: 15vw;
+        height: 10vh;
+        right: 25vw;
+        top: 0;
+        flex-direction: row;
+        z-index: 3;
+    }
+
+    label[for="switch"]{
+        width: 40px;
+        height: 20px;
+    }
+
+    input:checked + label[for="switch"]:after{
+        top: 0;
+        left: 20px;
+    }
+
+    /* AFFICHER UN LIEN SUPPLÉMENTAIRE DANS LA NAV */
+    #add-formulaire{
+        display: inherit;
+    }
+
+    /* DROP DOWN RESEAUX */
+    nav ul ul{
+        position: relative;
+    }  
+
+    nav ul ul li{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-weight: normal;
+    }
+
+    /* RENDRE INVISIBLE DES ÉLÉMENTS */
+    .boutoncouleur, #barre{
+        display: none;
+    }
+
+    /* FORMULAIRE */
+    #formulaire{
+        height: 100vh;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-bottom: 0%;
+        position: relative;
+        order: 2;
+    }
+
+    input, textarea{
+        width : 100%;
+        z-index: 1;
+    }
+
+    h3{
+        font-size: 2em;
+        border-bottom: 15px solid #25FD02;
+        width: 100%;
+        margin-top: 10vh;
+        padding-bottom: 20px;
+        margin-bottom: 5%;
+    }
+}

@@ -1,76 +1,210 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheet.css">
-    <title>Agence Contraste</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Contrast Agency</title>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
 </head>
-<body>
 
-    <!-- SYLVIE -->
+<body>
+    <!-- SECTION "BARRE DE NAVIGATION" -->
     <header>
-        <h1>Contraste</h1>
+        <section id="logo">
+            <h1><a href="#homepage">Contrast<span class="textChange">.</span></a></h1>
+        </section>
         <nav>
-            <ul>
-                <li><a href="#agence">Agence</a></li>
-                <li><a href="#concept">Concept</a></li>
-                <li><a href="#equipe">Equipe</a></li>
+            <ul class="nav-links borderChange">
+                <li><a href="#agence" class="textHoveredChange">L'agence</a></li>
+                <li><a href="#concept" class="textHoveredChange">Le concept</a></li>
+                <li><a href="#team" class="textHoveredChange">L'équipe</a></li>
+                <li id="add-formulaire"><a href="#formulaire" class="textHoveredChange">Nous contacter</a></li>
+                <li><a href="#reseaux" class="textHoveredChange">Nos réseaux</a>
+                    <ul>
+                        <li><a href="https://www.facebook.com/"  target="_blank" class="textHoveredChange">Facebook</a></li>
+                        <li><a href="http://linkedin.com/" target="_blank" class="textHoveredChange">Linkedin</a></li>
+                        <li><a href="https://github.com/" target="_blank" class="textHoveredChange">Github</a></li>
+                    </ul>
+                </li>
             </ul>
-        </nav>
-        <div>Réseaux Sociaux</div>
+            <div class="burger">
+                <div class="line1 backgroundChange"></div>
+                <div class="line2 backgroundChange"></div>
+                <div class="line3 backgroundChange"></div>
+            </div>
+        </nav>       
     </header>
 
-    <!-- LUCAS -->
-    <section id="HomePage">
-            <h2>Pas de superflu... <br /> juste <span id="typed"></span></h2>
-            <a href="#agence" >
-                <div id="ArrowBottom"></div>
-            </a>
+    <!-- SECTION "PAGE D'ACCUEIL" -->
+    <section id="homepage">
+        <h2>Pas de superflu... <br /> juste <span id="typed" class="textChange"></span></h2>
+        <a href="#agence" >
+            <div id="ArrowBottom"></div>
+        </a>
     </section>
 
-    <!-- LÉO -->
-    <article id="agence">
-        <h3>L'agence</h3>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae perspiciatis minima optio, delectus soluta corrupti molestias dicta unde excepturi. ctus soluta corrupti molestias. molestias dicta unde excepturi. ctus soluta corrupti molestias. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur elit.</p>
-    </article>
+    <!-- SECTION "TOGGLE BUTTON" -->
+    <section id="togglebutton">
 
-    <article id="concept">
-        <h3>Le concept</h3>
-        <p>Rien de plus simple, un fond noir, du texte blanc et une couleur que tu choisis, et nous nous occupons du reste ! Pas de superfu... Juste le contenu.</p>
-    </article>
+        <!-- Toggle Button -->
+        <input type="checkbox" id="switch" name="theme"/>
+        <label for="switch"></label>
 
-    <!-- ARTHURE -->
-    <article id="equipe">
-        <h3></h3>
-        <div class="box">
-            <img src="koala.jpg" alt="">
-        </div>
-        <div class="box">
+        <!-- Boutons pour changer la couleur -->
+        <button class="boutoncouleur toGreen" id="greenbutton"></button> 
+        <button class="boutoncouleur toPink" id="pinkbutton"></button>
+        <button class="boutoncouleur toYellow" id="yellowbutton"></button> 
+        <button class="boutoncouleur toBlue" id="bluebutton" ></button>
+    </section>
 
-        </div>
-    </article>
+    <!-- SECTION "L'AGENCE" -->
+    <section id="agence">
+        <h3 class="borderChange">L'agence</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ex sint fugit quos ipsam architecto alias provident numquam deleniti enim vel quidem natus totam voluptatibus sapiente dolorem sed quasi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ex sint fugit quos ipsam architect numquam deleniti enim vel quidem natus totam voluptatibus sapiente dolorem sed quasi. </p><br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ex sint fugit quos ipsam architecto alias provident numquam deleniti enim vel quidem natus totam voluptatibus sapiente dolorem sed quasi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ex sint fugit quos ipsam arcenim vel quidem natus totam voluptatibus sapiente dolorem sed quasi. </p>
+    </section>
 
+    <!-- SECTION FORMULAIRE -->
     <aside id="formulaire">
-        <form action="post">
-            <label for="fname">Prénom</label>
+
+        <form action="">
+            <h3 class="borderChange">Nous contacter</h3>
+
+            <label for="name"></label>
+            <input type="text" id="name" name="user_name" placeholder="Prénom" required>
+          
+            <label for="mail"></label>
+            <input type="email" id="mail" name="user_email" placeholder="Email" required>
+   
+            <label for="subject"></label>
+            <input type="text" id="subject" name="user_subject" placeholder="Sujet (ex: Création de site web)" required>
+
+            <label for="msg"></label>
+            <textarea id="msg" name="user_message" placeholder="Votre demande" required></textarea>
+           
+            <div class="button">
+              <button type="submit">Envoyer</button>
+            </div>
+
+            <div class="barre backgroundChange"></div>
         </form>
+        
     </aside>
 
-    <script>
-        var typed = new Typed('#typed', {
-            strings: ["le contenu.", "l'essentiel.", "le style bro'."],
-            typeSpeed : 50,
-            backSpeed : 50,
-            loop: true,
-            showCursor: true
-        })
-    </script>
-    <!-- SYLVIE -->
-    <footer>
+    <!-- SECTION "LE CONCEPT" -->
+    <section id="concept">
+        <h3 class ="borderChange">Le concept</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ex sint fugit quos ipsam architecto alias provident numquam deleniti enim vel quidem natus totam voluptatibus sapiente dolorem sed quasi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ex sint fugit quos ipsam architect numquam deleniti enim vel quidem natus totam voluptatibus sapiente dolorem sed quasi. </p><br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ex sint fugit quos ipsam architecto alias provident numquam deleniti enim vel quidem natus totam voluptatibus sapiente dolorem sed quasi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ex sint fugit quos ipsam arcenim vel quidem natus totam voluptatibus sapiente dolorem sed quasi. </p>
+    </section>
 
+    <!-- SECTION "L'ÉQUIPE" -->
+    <section id="team">    
+        <div id="header-team">
+            <h3 class="borderChange">L'équipe</h3>
+        </div>
+        
+        <!-- BOX SYLVIE -->
+        <div class="box"> <!-- Partie photo -->
+            <img src="sylvie.jpg" alt="">
+        </div>
+
+        <div class="box texte"> <!-- Partie texte -->
+            <div class="box_header">
+                <div class="linkedinbox backgroundChange">
+                    <p class="linkedin"><a href="https://www.linkedin.com/in/sylvie-lu/">in</a></p>
+                </div>
+                <div class="membre">
+                    <h4>Sylvie LU</h4>
+                    <h5>Développeuse Back-End</h5>
+                </div>
+            </div>
+            <div class="texte_team">
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+            </div>
+        </div>
+
+        <!-- BOX ARTHUR -->
+        <div class="box-reverse"> <!-- La classe "reverse" permet d'inverser les box "texte" et "photo" sur smartphone -->
+            <div class="box texte"> <!-- Partie texte -->
+                <div class="box_header">
+                    <div class="membre membre-left">
+                        <h4>Arthur GUEZ</h4>
+                        <h5>Développeur Full-Stack</h5>
+                    </div>
+                    <div class="linkedinbox backgroundChange">
+                        <p class="linkedin"><a href="https://www.linkedin.com/in/arthurguez/">in</a></p>
+                    </div>
+                </div>
+                <div class="texte_team">
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+                </div>
+            </div>
+            <div class="box"> <!-- Partie photo -->
+                <img src="arthur.jpg" alt="">
+            </div>
+        </div>
+
+
+        <!-- BOX LUCAS -->
+        <div class="box"> <!-- Partie photo -->
+            <img src="lucas.jpg" alt="">
+        </div>
+
+        <div class="box texte"> <!-- Partie texte -->
+            <div class="box_header">
+                <div class="linkedinbox backgroundChange">
+                    <p class="linkedin"><a href="https://www.linkedin.com/in/beneston-lucas/">in</a></p>
+                </div>
+                <div class="membre">
+                    <h4>Lucas BENESTON</h4>
+                    <h5>Développeur Front-End</h5>
+                </div>
+            </div>
+            <div class="texte_team">
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+            </div>
+        </div>
+
+        <!-- BOX LEO -->
+        <div class="box-reverse">  <!-- La classe "reverse" permet d'inverser les box "texte" et "photo" sur smartphone -->
+            <div class="box texte"> <!-- Partie texte -->
+                <div class="box_header">
+                    <div class="membre membre-left">
+                        <h4>Léonardo KABONGO</h4>
+                        <h5>Content Creator / Back-End</h5>
+                    </div>
+                    <div class="linkedinbox backgroundChange">
+                        <p class="linkedin"><a href="https://www.linkedin.com/in/leonardo-antonio-maundo-kabongo-0a9141182/">in</a></p>
+                    </div>
+                </div>
+                <div class="texte_team">
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+                </div>
+            </div>
+            <div class="box"> <!-- Partie photo -->
+                <img src="leo.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION "FOOTER" -->
+    <footer>
+        <div id="texte_footer_left">
+            <p>21 rue de la Vanne<br>92120 Montrouge<br>Tel: 01 44 43 11 00</p>
+        </div>
+        <div class="ArrowBox backgroundChange">
+            <a href="#homepage">
+                <div class="ArrowTop backgroundChange"></div>
+            </a>
+        </div>
+        <div id="texte_footer_right">
+            <h6>Ceci est un pied. <br> © Contrast.</h6>
+        </div>
     </footer>
 
+    <!-- JAVASCRIPT ANIMATION TEXTE <h1> / SWITCH MODE DARK & LIGHT / BURGER / BOUTONS COULEURS -->
+    <script src="animation.js"></script>
 </body>
 </html>
