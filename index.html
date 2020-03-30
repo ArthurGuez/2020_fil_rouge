@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="fr" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Contrast Agency</title>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+    <script src="index.js"></script>
 </head>
 
 <body>
@@ -45,7 +46,7 @@
     </section>
 
     <!-- SECTION "TOGGLE BUTTON" -->
-    <section id="togglebutton">
+    <div id="togglebutton">
 
         <!-- Toggle Button -->
         <input type="checkbox" id="switch" name="theme"/>
@@ -56,7 +57,7 @@
         <button class="boutoncouleur toPink" id="pinkbutton"></button>
         <button class="boutoncouleur toYellow" id="yellowbutton"></button> 
         <button class="boutoncouleur toBlue" id="bluebutton" ></button>
-    </section>
+    </div>
 
     <!-- SECTION "L'AGENCE" -->
     <section id="agence">
@@ -68,20 +69,20 @@
     <!-- SECTION FORMULAIRE -->
     <aside id="formulaire">
 
-        <form action="">
+        <form method="POST" action="/">
             <h3 class="borderChange">Nous contacter</h3>
 
             <label for="name"></label>
-            <input type="text" id="name" name="user_name" placeholder="Prénom" required>
+            <input type="text" id="name" name="name" placeholder="Prénom" required>
           
             <label for="mail"></label>
-            <input type="email" id="mail" name="user_email" placeholder="Email" required>
+            <input type="email" id="mail" name="email" placeholder="Email" required>
    
             <label for="subject"></label>
-            <input type="text" id="subject" name="user_subject" placeholder="Sujet (ex: Création de site web)" required>
+            <input type="text" id="subject" name="subject" placeholder="Sujet (ex: Création de site web)" required>
 
             <label for="msg"></label>
-            <textarea id="msg" name="user_message" placeholder="Votre demande" required></textarea>
+            <textarea id="msg" name="message" placeholder="Votre demande" required></textarea>
            
             <div class="button">
               <button type="submit">Envoyer</button>
