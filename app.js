@@ -40,7 +40,6 @@ if (currentTheme) {
         }
 // FIN SCRIPT TOGGLE 
 
-
 // SCRIPT BURGER 
 const navSlide = () => {
     const burger = document.querySelector('.burger');
