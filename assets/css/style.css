@@ -63,15 +63,14 @@ header{
 
 #agence{
     width: 55vw;
-    height: 85vh;
     padding: 5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
 #concept{
     width: 55vw;
-    height: 85vh;
     padding: 5%;
     display: flex;
     flex-direction: column;
