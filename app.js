@@ -1,6 +1,6 @@
 // SCRIPT ANIMATION DU TEXTE <h1> 
 var typed = new Typed('#typed', {
-    strings: ["bursts of meaning.", "colours entwined.", "consistency.", "visions of colours."],
+    strings: ["bursts of meaning.", "colours entwined.", "visions of creativity."],
     typeSpeed : 50,
     backSpeed : 50,
     loop: true,
